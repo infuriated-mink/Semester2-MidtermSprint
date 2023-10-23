@@ -2,7 +2,7 @@
 
 ## Description
 ---
-DishHub is a web-based platform for culinary enthusiasts to explore, contribute, and share recipes. It provides a user-friendly interface for discovering and posting recipes, fostering culinary creativity and community engagement.
+DishHub is a modern-day recipe box that allows users to explore, contribute, and save their favorite recipes. Users can search for recipes, add their own, and interact with a community of fellow food enthusiasts. The platform is designed for easy access across various devices, making it a user-friendly culinary companion
 
 ## Team Members
 ---
