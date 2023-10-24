@@ -1,17 +1,34 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
-export default function Auth(props) {
-  const [authMode, setAuthMode] = React.useState("signin");
+export default function Auth() {
   const navigate = useNavigate();
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [name, setName] = useState(""); 
+  const [email, setEmail] = useState(""); 
+  const [loginError, setLoginError] = useState("");
+  const [isSignUp, setIsSignUp] = useState(false);
 
-  const changeAuthMode = () => {
-    setAuthMode(authMode === "signin" ? "signup" : "signin");
+  const handleLogin = () => {
+    const userData = {
+      user1: "password1",
+      user2: "password2",
+    };
+
+    if (userData[username] === password) {
+      navigate("/index.html");
+    } else {
+      setLoginError("Username and password do not match.");
+    }
   };
 
-  const handleNavigate = () => {
-    // Navigate to 'index.html' when the "Submit" button is clicked
+  const handleSignUp = () => {
+    // For demonstration purposes, we're navigating to index.html.
     navigate("/index.html");
+
+    // Show a success message using the window.alert function.
+    window.alert("Sign Up was successful!");
   };
 
   return (
@@ -19,41 +36,16 @@ export default function Auth(props) {
       <form className="Auth-form">
         <div className="Auth-form-content">
           <h3 className="Auth-form-title">
-            {authMode === "signin" ? "Sign In" : "Sign Up"}
+            {isSignUp ? "Sign Up" : "Sign In"}
           </h3>
-          <div className="text-center">
-            {authMode === "signin" ? (
-              <>
-                Not registered yet?{" "}
-                <span className="link-primary" onClick={changeAuthMode}>
-                  Sign Up
-                </span>
-              </>
-            ) : (
-              <>
-                Already registered?{" "}
-                <span className="link-primary" onClick={changeAuthMode}>
-                  Sign In
-                </span>
-              </>
-            )}
-          </div>
           <div className="form-group mt-3">
-            {authMode === "signup" && (
-              <div className="form-group mt-3">
-                <label>Full Name</label>
-                <input
-                  type="text"
-                  className="form-control mt-1"
-                  placeholder="e.g Jane Doe"
-                />
-              </div>
-            )}
-            <label>Email address</label>
+            <label>Username</label>
             <input
-              type="email"
+              type="text"
               className="form-control mt-1"
-              placeholder="Enter email"
+              placeholder="Enter username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
             />
           </div>
           <div className="form-group mt-3">
@@ -62,16 +54,65 @@ export default function Auth(props) {
               type="password"
               className="form-control mt-1"
               placeholder="Enter password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
             />
           </div>
+          {isSignUp && (
+            <>
+              <div className="form-group mt-3">
+                <label>Name</label>
+                <input
+                  type="text"
+                  className="form-control mt-1"
+                  placeholder="Enter your name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                />
+              </div>
+              <div className="form-group mt-3">
+                <label>Email</label>
+                <input
+                  type="email"
+                  className="form-control mt-1"
+                  placeholder="Enter your email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+              </div>
+            </>
+          )}
           <div className="d-grid gap-2 mt-3">
-            <button type="button" className="btn btn-primary" onClick={handleNavigate}>
+            <button
+              type="button"
+              className="btn btn-primary"
+              onClick={isSignUp ? handleSignUp : handleLogin}
+            >
               Submit
             </button>
           </div>
-          <p className="text-center mt-2">
+          <p className="forgot-password text-right mt-2">
+            {loginError && <span className="error-message">{loginError}</span>}
+            <br />
             Forgot <a href="#">password?</a>
           </p>
+          <div className="text-center mt-3">
+            {isSignUp ? (
+              <>
+                Already registered?{" "}
+                <Link to="/signin" onClick={() => setIsSignUp(false)}>
+                  Sign In
+                </Link>
+              </>
+            ) : (
+              <>
+                Not registered yet?{" "}
+                <Link to="/signup" onClick={() => setIsSignUp(true)}>
+                  Sign Up
+                </Link>
+              </>
+            )}
+          </div>
         </div>
       </form>
     </div>
