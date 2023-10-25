@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import userData from "./users.json"; 
 
 export default function SignIn() {
   const navigate = useNavigate();
@@ -8,15 +9,8 @@ export default function SignIn() {
   const [loginError, setLoginError] = useState("");
 
   const handleSignIn = () => {
-    // Define your user data with usernames and passwords
-    const userData = {
-      user1: "password1",
-      user2: "password2",
-    };
-
-    // Check if the entered username and password match
     if (userData[username] === password) {
-      navigate("/home"); // Navigate to the home page
+      navigate("/home");
     } else {
       setLoginError("Username and password do not match.");
     }
