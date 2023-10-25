@@ -1,33 +1,31 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
-export default function Auth() {
+export default function Auth({ isSignUp }) {
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [name, setName] = useState(""); 
-  const [email, setEmail] = useState(""); 
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
   const [loginError, setLoginError] = useState("");
-  const [isSignUp, setIsSignUp] = useState(false);
 
   const handleLogin = () => {
+    // Define your user data with usernames and passwords
     const userData = {
       user1: "password1",
       user2: "password2",
     };
 
+    // Check if the entered username and password match
     if (userData[username] === password) {
-      navigate("/index.html");
+      navigate("/home");
     } else {
       setLoginError("Username and password do not match.");
     }
   };
 
   const handleSignUp = () => {
-    // For demonstration purposes, we're navigating to index.html.
-    navigate("/index.html");
-
-    // Show a success message using the window.alert function.
+    navigate("/home"); // Navigate to the home page
     window.alert("Sign Up was successful!");
   };
 
@@ -35,9 +33,7 @@ export default function Auth() {
     <div className="Auth-form-container">
       <form className="Auth-form">
         <div className="Auth-form-content">
-          <h3 className="Auth-form-title">
-            {isSignUp ? "Sign Up" : "Sign In"}
-          </h3>
+          <h3 className="Auth-form-title">{isSignUp ? "Sign Up" : "Sign In"}</h3>
           <div className="form-group mt-3">
             <label>Username</label>
             <input
@@ -100,16 +96,12 @@ export default function Auth() {
             {isSignUp ? (
               <>
                 Already registered?{" "}
-                <Link to="/signin" onClick={() => setIsSignUp(false)}>
-                  Sign In
-                </Link>
+                <Link to="/signin">Sign In</Link>
               </>
             ) : (
               <>
                 Not registered yet?{" "}
-                <Link to="/signup" onClick={() => setIsSignUp(true)}>
-                  Sign Up
-                </Link>
+                <Link to="/signup">Sign Up</Link>
               </>
             )}
           </div>
