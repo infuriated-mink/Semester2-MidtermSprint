@@ -90,7 +90,7 @@ export default function Auth({ isSignUp }) {
           <p className="forgot-password text-right mt-2">
             {loginError && <span className="error-message">{loginError}</span>}
             <br />
-            Forgot <a href="#">password?</a>
+            Forgot <Link to="#">password?</Link>
           </p>
           <div className="text-center mt-3">
             {isSignUp ? (

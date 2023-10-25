@@ -10,12 +10,8 @@ export default function SignUp() {
   const [loginError, setLoginError] = useState("");
 
   const handleSignUp = () => {
-    // Your sign-up logic here
 
-    // For demonstration purposes, we're navigating to index.html.
     navigate("/index.html");
-
-    // Show a success message using the window.alert function.
     window.alert("Sign Up was successful!");
   };
 
