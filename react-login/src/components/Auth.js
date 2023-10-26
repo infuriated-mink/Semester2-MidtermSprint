@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import userData from "../user.json";
 
 export default function Auth({ isSignUp }) {
   const navigate = useNavigate();
@@ -10,14 +11,9 @@ export default function Auth({ isSignUp }) {
   const [loginError, setLoginError] = useState("");
 
   const handleLogin = () => {
-    // Define your user data with usernames and passwords
-    const userData = {
-      user1: "password1",
-      user2: "password2",
-    };
-
-    // Check if the entered username and password match
-    if (userData[username] === password) {
+    if (userData[username] && userData[username].password === password) {
+      const user = userData[username];
+      alert(`Welcome back, ${user.firstName}!`);
       navigate("/home");
     } else {
       setLoginError("Username and password do not match.");
@@ -25,8 +21,18 @@ export default function Auth({ isSignUp }) {
   };
 
   const handleSignUp = () => {
-    navigate("/home"); // Navigate to the home page
-    window.alert("Sign Up was successful!");
+    if (userData[username]) {
+      setLoginError("Username already exists. Please choose another.");
+    } else {
+
+      userData[username] = {
+        password,
+        firstName: name, 
+        email: email, 
+      };
+
+      navigate("/home");
+    }
   };
 
   return (
