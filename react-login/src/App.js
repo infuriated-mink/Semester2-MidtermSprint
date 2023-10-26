@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./index.css";
 import Auth from "./components/Auth";
 import Home from "./pages/Home";
-import AddItem from "./components/AddItem";
+import AddItem from './pages/AddItem';
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import RecipeDetails from "./components/RecipeDetails"; // Import the RecipeDetails component
