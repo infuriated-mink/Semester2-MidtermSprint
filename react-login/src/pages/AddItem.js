@@ -1,79 +1,72 @@
 import React, { useState } from 'react';
-import AddRecipeAndGoHomeButton from '../components/AddRecipeAndGoHomeButton';
-import AddRecipeAndAddAnotherButton from '../components/AddRecipeAndAddAnotherButton';
+import { addRecipe } from '../components/recipes'; 
+import { useNavigate } from 'react-router-dom';
 
 function AddItem() {
-  const [recipe, setRecipe] = useState({
+  const navigate = useNavigate();
+
+  const [item, setItem] = useState({
     name: '',
-    ingredients: '',
     description: '',
+    photo: '',
+    ingredients: '',
     instructions: '',
-    mealType: '',
-    image: null, // Change the initial value to null
   });
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setRecipe({
-      ...recipe,
-      [name]: value,
-    });
+    setItem({ ...item, [name]: value });
   };
 
-  // Handle image file selection
-  const handleImageChange = (e) => {
-    const imageFile = e.target.files[0];
-    setRecipe({
-      ...recipe,
-      image: imageFile,
-    });
+  const handlePhotoChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        setItem({ ...item, photo: e.target.result });
+      };
+      reader.readAsDataURL(file);
+    }
   };
 
-  const handleAddRecipe = () => {
-    // Implement the logic to add the recipe
-    // You can access the image file as recipe.image
-    console.log('Added Recipe:', recipe);
-    setRecipe({
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+
+    const newRecipe = {
+      name: item.name,
+      description: item.description,
+      photo: item.photo,
+      ingredients: item.ingredients,
+      instructions: item.instructions,
+    };
+
+  
+    addRecipe(newRecipe);
+
+    setItem({
       name: '',
-      ingredients: '',
       description: '',
+      photo: '',
+      ingredients: '',
       instructions: '',
-      mealType: '',
-      image: null,
     });
   };
 
-  const handleAddAnother = () => {
-    // Implement the logic to add the recipe and continue adding another
-    console.log('Added Recipe:', recipe);
-    setRecipe({
-      name: '',
-      ingredients: '',
-      description: '',
-      instructions: '',
-      mealType: '',
-      image: null,
-    });
+  const handleBackToHome = () => {
+    navigate('/home');
   };
 
   return (
     <div>
-      <h2>Add a New Recipe</h2>
-      <form>
+      <h1>Add a New Recipe</h1>
+      <form onSubmit={handleSubmit}>
         <div>
           <label>Name:</label>
           <input
             type="text"
             name="name"
-            value={recipe.name}
-            onChange={handleInputChange}
-          />
-        </div>
-        <div>
-          <label>Ingredients:</label>
-          <textarea
-            name="ingredients"
-            value={recipe.ingredients}
+            value={item.name}
             onChange={handleInputChange}
           />
         </div>
@@ -81,7 +74,32 @@ function AddItem() {
           <label>Description:</label>
           <textarea
             name="description"
-            value={recipe.description}
+            value={item.description}
+            onChange={handleInputChange}
+          />
+        </div>
+        <div>
+          <label>Photo (Local File):</label>
+          <input
+            type="file"
+            accept="image/*"
+            onChange={handlePhotoChange}
+          />
+        </div>
+        {item.photo && (
+          <div>
+            <img
+              src={item.photo}
+              alt="Recipe Preview"
+              style={{ maxWidth: '300px' }}
+            />
+          </div>
+        )}
+        <div>
+          <label>Ingredients:</label>
+          <textarea
+            name="ingredients"
+            value={item.ingredients}
             onChange={handleInputChange}
           />
         </div>
@@ -89,35 +107,17 @@ function AddItem() {
           <label>Instructions:</label>
           <textarea
             name="instructions"
-            value={recipe.instructions}
+            value={item.instructions}
             onChange={handleInputChange}
           />
         </div>
         <div>
-          <label>Meal Type:</label>
-          <select
-            name="mealType"
-            value={recipe.mealType}
-            onChange={handleInputChange}
-          >
-            <option value="breakfast">Breakfast</option>
-            <option value="lunch">Lunch</option>
-            <option value="dinner">Dinner</option>
-          </select>
-        </div>
-        <div>
-          <label>Image:</label>
-          <input
-            type="file"
-            name="image"
-            onChange={handleImageChange}
-          />
+          <button type="submit">Add Recipe</button>
+          <button type="button" onClick={handleBackToHome}>
+            Back to Home
+          </button>
         </div>
       </form>
-      <div>
-        <AddRecipeAndGoHomeButton onClick={handleAddRecipe} />
-        <AddRecipeAndAddAnotherButton onClick={handleAddAnother} />
-      </div>
     </div>
   );
 }
