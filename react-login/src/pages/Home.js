@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import RecipeSearch from '../components/RecipeSearch';
 import RecipeDetails from '../components/RecipeDetails';
-import recipes from '../components/recipes';
+import recipes from '../components/recipes'; // Import your recipe data
 
 function Home() {
   const navigate = useNavigate();

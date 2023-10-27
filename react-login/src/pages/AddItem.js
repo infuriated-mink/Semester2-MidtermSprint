@@ -2,15 +2,22 @@ import React, { useState } from 'react';
 import { addRecipe } from '../components/recipes'; 
 import { useNavigate } from 'react-router-dom';
 
+
+const generateUniqueID = () => {
+  return '_' + Math.random().toString(36).substr(2, 9);
+};
+
 function AddItem() {
   const navigate = useNavigate();
-
   const [item, setItem] = useState({
+    id: generateUniqueID(), 
     name: '',
     description: '',
     photo: '',
     ingredients: '',
     instructions: '',
+    mealType: '',
+
   });
 
   const handleInputChange = (e) => {
@@ -34,26 +41,31 @@ function AddItem() {
 
 
     const newRecipe = {
+      id: item.id,
       name: item.name,
       description: item.description,
       photo: item.photo,
       ingredients: item.ingredients,
       instructions: item.instructions,
+      mealType: item.mealType,
+
     };
 
-  
+
     addRecipe(newRecipe);
 
+
     setItem({
+      id: generateUniqueID(), 
       name: '',
       description: '',
       photo: '',
       ingredients: '',
       instructions: '',
+      mealType: '',
+    
     });
-  };
 
-  const handleBackToHome = () => {
     navigate('/home');
   };
 
@@ -112,10 +124,20 @@ function AddItem() {
           />
         </div>
         <div>
+          <label>Meal Type:</label>
+          <select
+            name="mealType"
+            value={item.mealType}
+            onChange={handleInputChange}
+          >
+            <option value="breakfast">Breakfast</option>
+            <option value="lunch">Lunch</option>
+            <option value="dinner">Dinner</option>
+          </select>
+        </div>
+        <div>
           <button type="submit">Add Recipe</button>
-          <button type="button" onClick={handleBackToHome}>
-            Back to Home
-          </button>
+          <button type="button" onClick={() => navigate('/home')}>Back to Home</button>
         </div>
       </form>
     </div>
