@@ -3,7 +3,7 @@ const recipes = [
     id: 1,
     name: 'Spaghetti Carbonara',
     mealType: 'dinner',
-    image: require('../media/puffinhead.jpg', ),
+    image: require('../media/carbonara.jpg', ),
     ingredients: [
       '200g spaghetti',
       '2 large eggs',
@@ -18,7 +18,7 @@ const recipes = [
     id: 2,
     name: 'Chicken Alfredo',
     mealType: 'dinner', 
-    image: 'URL_TO_CHICKEN_ALFREDO_IMAGE',
+    image: require('../media/chicken.jpeg',),
     ingredients: [
       '2 boneless, skinless chicken breasts',
       '8 oz fettuccine pasta',
@@ -35,7 +35,7 @@ const recipes = [
     id: 3,
     name: 'Scrambled Eggs',
     mealType: 'breakfast', 
-    image: 'URL_TO_SCRAMBLED_EGGS_IMAGE',
+    image: require('../media/eggs.jpg',),
     ingredients: [
       '4 large eggs',
       '2 tablespoons milk',
@@ -49,7 +49,7 @@ const recipes = [
     id: 4,
     name: 'Caesar Salad',
     mealType: 'lunch', 
-    image: 'URL_TO_CAESAR_SALAD_IMAGE',
+    image: require('../media/salad.jpg',),
     ingredients: [
       '1 head of Romaine lettuce',
       '1/4 cup Caesar dressing',

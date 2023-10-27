@@ -7,7 +7,7 @@ import Home from "./pages/Home";
 import AddItem from './pages/AddItem';
 import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
-import RecipeDetails from "./components/RecipeDetails"; // Import the RecipeDetails component
+import RecipeDetails from "./components/RecipeDetails"; 
 
 function App() {
   return (
