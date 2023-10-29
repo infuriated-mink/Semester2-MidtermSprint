@@ -27,7 +27,7 @@ DishHub is a modern-day recipe box that allows users to explore, contribute, and
 
 ## Features
 
-- Add new recipes with titles, descriptions, ingredients, and instructions
+- Add new recipes with titles, descriptions, ingredients, instructions and photos.
 - View a list of recipes with descriptions.
 - Search for recipes by name or by meal type.
 - Responsive design for various screen sizes.
