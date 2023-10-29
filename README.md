@@ -1,12 +1,13 @@
 # DishHub
 
 ## Description
-This is a web application for managing and sharing your favorite recipes. Users can add, view, and search for recipes.
+
 ---
+
 DishHub is a modern-day recipe box that allows users to explore, contribute, and save their favorite recipes. Users can search for recipes, and add/edit their own. The platform is designed for easy access across various devices, making it a user-friendly culinary companion
 
-
 ## Table of Contents
+
 - [Features](#features)
 - [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
@@ -16,21 +17,20 @@ DishHub is a modern-day recipe box that allows users to explore, contribute, and
 - [Contributing](#contributing)
 - [License](#license)
 
-
 ## Team Members
+
 ---
+
 1. Vanesssa Rice
 2. Zimuzo Akanne
 3. Dillon Regular
 
 ## Features
 
-- Add new recipes with titles, descriptions, ingredients, instructions, and estimated costs.
+- Add new recipes with titles, descriptions, ingredients, and instructions
 - View a list of recipes with descriptions.
-- Search for recipes by name or tags.
-- Calculate and display the total cost of ingredients for each recipe.
+- Search for recipes by name or by meal type.
 - Responsive design for various screen sizes.
-
 
 ## Getting Started
 
@@ -47,3 +47,4 @@ Make sure you have the following software installed on your system:
 
    ```bash
    git clone <repository-url>
+   ```
