@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { addRecipe } from '../components/recipes'; 
+import React, { useState, useEffect } from 'react';
+// import recipes from '../components/recipes';
 import { useNavigate } from 'react-router-dom';
 
 
@@ -9,8 +9,9 @@ const generateUniqueID = () => {
 
 function AddItem() {
   const navigate = useNavigate();
+  const [recipes, setRecipes] = useState(JSON.parse(localStorage.getItem("recipes")) || []);
   const [item, setItem] = useState({
-    id: generateUniqueID(), 
+    id: generateUniqueID(),
     name: '',
     description: '',
     photo: '',
@@ -36,6 +37,12 @@ function AddItem() {
     }
   };
 
+
+  useEffect(() => {
+    localStorage.setItem("recipes", JSON.stringify(recipes))
+    console.log(`recipe list: ${JSON.stringify(recipes)}`)
+  }, [recipes])
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -51,22 +58,20 @@ function AddItem() {
 
     };
 
+    setRecipes(prevRecipes => [...prevRecipes, newRecipe]);
 
-    addRecipe(newRecipe);
+    // setItem({
+    //   id: generateUniqueID(),
+    //   name: '',
+    //   description: '',
+    //   photo: '',
+    //   ingredients: '',
+    //   instructions: '',
+    //   mealType: '',
 
+    // });
 
-    setItem({
-      id: generateUniqueID(), 
-      name: '',
-      description: '',
-      photo: '',
-      ingredients: '',
-      instructions: '',
-      mealType: '',
-    
-    });
-
-    navigate('/home');
+    // navigate('/home');
   };
 
   return (
