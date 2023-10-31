@@ -1,5 +1,10 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import Button from 'react-bootstrap/Button';
+import Col from 'react-bootstrap/Col';
+import Row from 'react-bootstrap/Row';
+import Toast from 'react-bootstrap/Toast';
+
 import userData from "../user.json";
 
 export default function SignIn() {
@@ -7,15 +12,19 @@ export default function SignIn() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [loginError, setLoginError] = useState("");
+  const [show, setShow] = useState(false);
 
-  const handleSignIn = () => {
-    if (userData[username] && userData[username].password === password) {
-      alert(`Welcome back, ${userData[username].firstName}!`);
-      navigate("/home");
+
+  const handleSignIn = (showToast) => {
+    if (showToast && userData[username] && userData[username].password === password) {
+      setShow(true)
+      DisplayToast({ showToast: true, userData: userData })
     } else {
       setLoginError("Username and password do not match.");
     }
-  };  
+  };
+
+
 
   return (
     <div className="Auth-form-container">
@@ -46,7 +55,7 @@ export default function SignIn() {
             <button
               type="button"
               className="btn btn-primary"
-              onClick={handleSignIn}
+              onClick={() => handleSignIn(true)}
             >
               Submit
             </button>
@@ -65,3 +74,34 @@ export default function SignIn() {
     </div>
   );
 }
+
+// toast state show
+function DisplayToast({ showToast, userData }) {
+  return (
+    <div>
+      toast
+    </div>
+    // <Row>
+    //   <Col xs={6}>
+    //     <Toast show={showToast} delay={3000} autohide>
+    //       <Toast.Header>
+    //         <strong className="me-auto">Success bhavik</strong>
+    //       </Toast.Header>
+    //       <Toast.Body>{`Welcome back, ${userData}!`}</Toast.Body>
+    //     </Toast>
+    //   </Col>
+    //   {/* <Col xs={6}>
+    //       <Button onClick={() => setShow(true)}>Show Toast</Button>
+    //     </Col> */}
+    // </Row>
+  )
+}
+
+// function AutohideExample() {
+
+//   return (
+
+//   );
+// }
+
+// export default AutohideExample;

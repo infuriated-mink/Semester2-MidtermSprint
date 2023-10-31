@@ -3,7 +3,7 @@ const recipes = [
     id: 1,
     name: 'Spaghetti Carbonara',
     mealType: 'dinner',
-    image: require('../media/carbonara.jpg', ),
+    image: require('../media/carbonara.jpg',),
     ingredients: [
       '200g spaghetti',
       '2 large eggs',
@@ -17,7 +17,7 @@ const recipes = [
   {
     id: 2,
     name: 'Chicken Alfredo',
-    mealType: 'dinner', 
+    mealType: 'dinner',
     image: require('../media/chicken.jpeg',),
     ingredients: [
       '2 boneless, skinless chicken breasts',
@@ -34,7 +34,7 @@ const recipes = [
   {
     id: 3,
     name: 'Scrambled Eggs',
-    mealType: 'breakfast', 
+    mealType: 'breakfast',
     image: require('../media/eggs.jpg',),
     ingredients: [
       '4 large eggs',
@@ -48,7 +48,7 @@ const recipes = [
   {
     id: 4,
     name: 'Caesar Salad',
-    mealType: 'lunch', 
+    mealType: 'lunch',
     image: require('../media/salad.jpg',),
     ingredients: [
       '1 head of Romaine lettuce',
@@ -64,8 +64,9 @@ const recipes = [
 export default recipes;
 
 
-function addRecipe(newRecipe) {
-  recipes.push(newRecipe);
-}
+// function addRecipe(newRecipe) {
+//   recipes.push(newRecipe);
+//   console.log(`list of recipes: ${JSON.stringify(recipes)}`)
+// }
 
-export { recipes, addRecipe };
+// export { recipes, addRecipe };

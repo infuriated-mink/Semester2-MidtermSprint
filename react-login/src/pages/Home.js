@@ -4,7 +4,7 @@ import RecipeSearch from '../components/RecipeSearch';
 import RecipeDetails from '../components/RecipeDetails';
 import recipes from '../components/recipes'; // Import your recipe data
 
-function Home() {
+function Home({ reciepes }) {
   const navigate = useNavigate();
   const [searchResults, setSearchResults] = useState(recipes);
   const [selectedRecipe, setSelectedRecipe] = useState(null);
