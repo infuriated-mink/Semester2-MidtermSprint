@@ -9,8 +9,6 @@ function Home() {
   const [searchResults, setSearchResults] = useState([]);
   const [selectedRecipe, setSelectedRecipe] = useState(null);
   const [mealTypeFilter, setMealTypeFilter] = useState('all');
-
-  // Handle filtering recipes by meal type
   const filterRecipesByMealType = (mealType) => {
     const recipes = JSON.parse(localStorage.getItem('recipes')) || [];
 
@@ -22,20 +20,20 @@ function Home() {
     }
   };
 
-  // Load recipes from localStorage when the component mounts
+ 
   useEffect(() => {
     const recipes = JSON.parse(localStorage.getItem('recipes')) || [];
     setSearchResults(recipes);
   }, []);
 
-  // Handle searching for recipes
+
   const handleRecipeSearch = (query) => {
     const recipes = JSON.parse(localStorage.getItem('recipes')) || [];
     const filteredRecipes = recipes.filter((recipe) =>
       recipe.name.toLowerCase().includes(query.toLowerCase())
     );
 
-    // Apply meal type filter if a specific filter is selected
+  
     if (mealTypeFilter !== 'all') {
       const filteredByMealType = filteredRecipes.filter((recipe) => recipe.mealType === mealTypeFilter);
       setSearchResults(filteredByMealType);
@@ -44,12 +42,11 @@ function Home() {
     }
   };
 
-  // Handle selecting a recipe
+
   const handleRecipeSelect = (recipe) => {
     setSelectedRecipe(recipe);
   };
 
-  // Handle changing the meal type filter
   const handleMealTypeFilter = (event) => {
     const selectedMealType = event.target.value;
     setMealTypeFilter(selectedMealType);

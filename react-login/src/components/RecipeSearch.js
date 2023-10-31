@@ -15,7 +15,7 @@ function RecipeSearch({ onSearch }) {
 
   const clearSearch = () => {
     setSearchQuery('');
-    onSearch(''); // You can pass an empty query to indicate a clear search.
+    onSearch(''); 
   };
 
   return (

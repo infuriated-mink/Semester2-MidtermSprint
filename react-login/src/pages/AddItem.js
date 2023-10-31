@@ -12,7 +12,7 @@ function AddItem() {
     mealType: '',
   });
 
-  const [idCounter, setIdCounter] = useState(5); // Starting ID
+  const [idCounter, setIdCounter] = useState(5); 
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -34,7 +34,7 @@ function AddItem() {
     e.preventDefault();
 
     const newRecipe = {
-      id: idCounter, // Use the current value of idCounter
+      id: idCounter, 
       name: item.name,
       description: item.description,
       photo: item.photo,
@@ -43,7 +43,7 @@ function AddItem() {
       mealType: item.mealType,
     };
 
-    setIdCounter(idCounter + 1); // Increment the ID counter
+    setIdCounter(idCounter + 1); 
 
     const existingRecipes = JSON.parse(localStorage.getItem('recipes')) || [];
 
@@ -51,7 +51,7 @@ function AddItem() {
 
     localStorage.setItem('recipes', JSON.stringify(existingRecipes));
 
-    // Reset the form inputs
+   
     setItem({
       name: '',
       description: '',
