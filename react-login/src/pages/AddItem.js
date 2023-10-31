@@ -1,24 +1,18 @@
 import React, { useState } from 'react';
-import { addRecipe } from '../components/recipes'; 
 import { useNavigate } from 'react-router-dom';
-
-
-const generateUniqueID = () => {
-  return '_' + Math.random().toString(36).substr(2, 9);
-};
 
 function AddItem() {
   const navigate = useNavigate();
   const [item, setItem] = useState({
-    id: generateUniqueID(), 
     name: '',
     description: '',
     photo: '',
     ingredients: '',
     instructions: '',
     mealType: '',
-
   });
+
+  const [idCounter, setIdCounter] = useState(5); // Starting ID
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -39,34 +33,33 @@ function AddItem() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-
     const newRecipe = {
-      id: item.id,
+      id: idCounter, // Use the current value of idCounter
       name: item.name,
       description: item.description,
       photo: item.photo,
       ingredients: item.ingredients,
       instructions: item.instructions,
       mealType: item.mealType,
-
     };
 
+    setIdCounter(idCounter + 1); // Increment the ID counter
 
-    addRecipe(newRecipe);
+    const existingRecipes = JSON.parse(localStorage.getItem('recipes')) || [];
 
+    existingRecipes.push(newRecipe);
 
+    localStorage.setItem('recipes', JSON.stringify(existingRecipes));
+
+    // Reset the form inputs
     setItem({
-      id: generateUniqueID(), 
       name: '',
       description: '',
       photo: '',
       ingredients: '',
       instructions: '',
       mealType: '',
-    
     });
-
-    navigate('/home');
   };
 
   return (
@@ -137,9 +130,13 @@ function AddItem() {
         </div>
         <div>
           <button type="submit">Add Recipe</button>
-          <button type="button" onClick={() => navigate('/home')}>Back to Home</button>
         </div>
       </form>
+      <div>
+        <button type="button" onClick={() => navigate('/home')}>
+          Back to Home
+        </button>
+      </div>
     </div>
   );
 }

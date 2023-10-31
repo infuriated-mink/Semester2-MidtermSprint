@@ -2,16 +2,18 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import RecipeSearch from '../components/RecipeSearch';
 import RecipeDetails from '../components/RecipeDetails';
-import recipes from '../components/recipes'; // Import your recipe data
+import BackToHomeButton from '../components/BackToHomeButton';
 
 function Home() {
   const navigate = useNavigate();
-  const [searchResults, setSearchResults] = useState(recipes);
+  const [searchResults, setSearchResults] = useState([]);
   const [selectedRecipe, setSelectedRecipe] = useState(null);
   const [mealTypeFilter, setMealTypeFilter] = useState('all');
 
   // Handle filtering recipes by meal type
   const filterRecipesByMealType = (mealType) => {
+    const recipes = JSON.parse(localStorage.getItem('recipes')) || [];
+
     if (mealType === 'all') {
       setSearchResults(recipes);
     } else {
@@ -20,15 +22,23 @@ function Home() {
     }
   };
 
+  // Load recipes from localStorage when the component mounts
+  useEffect(() => {
+    const recipes = JSON.parse(localStorage.getItem('recipes')) || [];
+    setSearchResults(recipes);
+  }, []);
+
   // Handle searching for recipes
   const handleRecipeSearch = (query) => {
+    const recipes = JSON.parse(localStorage.getItem('recipes')) || [];
     const filteredRecipes = recipes.filter((recipe) =>
       recipe.name.toLowerCase().includes(query.toLowerCase())
     );
 
     // Apply meal type filter if a specific filter is selected
     if (mealTypeFilter !== 'all') {
-      filterRecipesByMealType(mealTypeFilter);
+      const filteredByMealType = filteredRecipes.filter((recipe) => recipe.mealType === mealTypeFilter);
+      setSearchResults(filteredByMealType);
     } else {
       setSearchResults(filteredRecipes);
     }
@@ -74,7 +84,12 @@ function Home() {
         ))}
       </ul>
 
-      {selectedRecipe && <RecipeDetails recipe={selectedRecipe} />}
+      {selectedRecipe && (
+        <>
+          <BackToHomeButton />
+          <RecipeDetails recipe={selectedRecipe} />
+        </>
+      )}
     </div>
   );
 }
