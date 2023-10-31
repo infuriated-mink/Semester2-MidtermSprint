@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import userData from "../user.json";
+import userData from "../data/user.json";
 
 export default function Auth({ isSignUp }) {
   const navigate = useNavigate();

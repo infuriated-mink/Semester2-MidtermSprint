@@ -1,24 +1,17 @@
-import React, { useState, useEffect } from 'react';
-// import recipes from '../components/recipes';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
-
-const generateUniqueID = () => {
-  return '_' + Math.random().toString(36).substr(2, 9);
-};
 
 function AddItem() {
   const navigate = useNavigate();
-  const [recipes, setRecipes] = useState(JSON.parse(localStorage.getItem("recipes")) || []);
+  const [idCounter, setIdCounter] = useState(5);
+
   const [item, setItem] = useState({
-    id: generateUniqueID(),
     name: '',
     description: '',
     photo: '',
     ingredients: '',
     instructions: '',
     mealType: '',
-
   });
 
   const handleInputChange = (e) => {
@@ -37,41 +30,36 @@ function AddItem() {
     }
   };
 
-
-  useEffect(() => {
-    localStorage.setItem("recipes", JSON.stringify(recipes))
-    console.log(`recipe list: ${JSON.stringify(recipes)}`)
-  }, [recipes])
-
   const handleSubmit = (e) => {
     e.preventDefault();
 
-
     const newRecipe = {
-      id: item.id,
+      id: idCounter,
       name: item.name,
       description: item.description,
       photo: item.photo,
       ingredients: item.ingredients,
       instructions: item.instructions,
       mealType: item.mealType,
-
     };
 
-    setRecipes(prevRecipes => [...prevRecipes, newRecipe]);
+    setIdCounter(idCounter + 1);
 
-    // setItem({
-    //   id: generateUniqueID(),
-    //   name: '',
-    //   description: '',
-    //   photo: '',
-    //   ingredients: '',
-    //   instructions: '',
-    //   mealType: '',
+    const existingRecipes = JSON.parse(localStorage.getItem('recipes')) || [];
 
-    // });
+    existingRecipes.push(newRecipe);
 
-    // navigate('/home');
+    localStorage.setItem('recipes', JSON.stringify(existingRecipes));
+
+
+    setItem({
+      name: '',
+      description: '',
+      photo: '',
+      ingredients: '',
+      instructions: '',
+      mealType: '',
+    });
   };
 
   return (
@@ -142,9 +130,13 @@ function AddItem() {
         </div>
         <div>
           <button type="submit">Add Recipe</button>
-          <button type="button" onClick={() => navigate('/home')}>Back to Home</button>
         </div>
       </form>
+      <div>
+        <button type="button" onClick={() => navigate('/home')}>
+          Back to Home
+        </button>
+      </div>
     </div>
   );
 }

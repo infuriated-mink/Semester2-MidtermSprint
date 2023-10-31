@@ -7,18 +7,35 @@ function RecipeSearch({ onSearch }) {
     onSearch(searchQuery);
   };
 
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      handleSearch();
+    }
+  };
+
+  const clearSearch = () => {
+    setSearchQuery('');
+    onSearch(''); 
+  };
+
   return (
     <div className="recipe-search-container">
       <input
         type="text"
         placeholder="Search for recipes..."
         value={searchQuery}
-        onChange={(e) => setSearchQuery(e.target.value)} 
+        onChange={(e) => setSearchQuery(e.target.value)}
+        onKeyPress={handleKeyPress}
         className="rounded-search-bar"
       />
       <button onClick={handleSearch} className="rounded-search-button">
         Search
       </button>
+      {searchQuery && (
+        <button onClick={clearSearch} className="clear-search-button">
+          Clear
+        </button>
+      )}
     </div>
   );
 }
