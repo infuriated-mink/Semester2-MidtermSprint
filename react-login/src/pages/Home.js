@@ -7,14 +7,15 @@ import oldRecipes from "../data/recipes.json"
 
 function Home() {
   const navigate = useNavigate();
+  const location = useLocation();
+
   const [searchResults, setSearchResults] = useState([]);
   const [selectedRecipe, setSelectedRecipe] = useState(null);
   const [mealTypeFilter, setMealTypeFilter] = useState('all');
-  const [recipes, setRecipes] = useState(oldRecipes);
-  const location = useLocation();
+  const [recipes, setRecipes] = useState(location.storage?.recipes);
 
   useEffect(() => {
-    !location.state?.newRecipes && localStorage.setItem("recipes", JSON.stringify(recipes))
+    !location.state?.recipes && localStorage.setItem("recipes", JSON.stringify(oldRecipes))
   }, [])
 
   const filterRecipesByMealType = (mealType) => {
@@ -82,26 +83,32 @@ function Home() {
 
       <h2>Recipes</h2>
       <ul>
-        {location.state?.newRecipes && location.state?.newRecipes.map((recipe) => (
+        {searchResults.map((recipe) => (
+          <li key={recipe.id} onClick={() => handleRecipeSelect(recipe)}>
+            <Link to={`/recipe/${recipe.id}`}>{recipe.name}</Link>
+          </li>
+        ))}
+        {/* {location.state?.recipes && location.state?.recipes.map((recipe) => (
           <li key={recipe.id} onClick={() => handleRecipeSelect(recipe)}>
             <Link to={`/recipe/${recipe.id}`}>{recipe.name}</Link>
           </li>
         ))}
 
-        {!location.state?.newRecipes && oldRecipes.map((recipe) => (
+        {!location.state?.recipes && oldRecipes.map((recipe) => (
           <li key={recipe.id} onClick={() => handleRecipeSelect(recipe)}>
             <Link to={`/recipe/${recipe.id}`}>{recipe.name}</Link>
           </li>
         ))
-        }
+        } */}
       </ul>
 
+      {/* <p>selected recipe {`${selectedRecipe}`}</p>
       {selectedRecipe && (
         <>
           <BackToHomeButton />
           <RecipeDetails recipe={selectedRecipe} />
         </>
-      )}
+      )} */}
     </div>
   );
 }

@@ -138,7 +138,7 @@ function AddItem() {
         </div>
       </form>
       <div>
-        <button type="button" onClick={() => navigate(`/home`, { state: { newRecipes: recipes } })}>
+        <button type="button" onClick={() => navigate(`/home`, { state: { recipes } })}>
           Back to Home
         </button>
       </div>

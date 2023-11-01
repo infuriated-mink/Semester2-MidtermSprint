@@ -12,7 +12,7 @@ function RecipeDetails() {
     return (
       <div>
         <p>No recipe available.</p>
-        <button onClick={() => navigate('/home')}>Back to Home</button>
+        <button onClick={() => navigate('/home', { state: { recipes: storedRecipes } })}>Back to Home</button>
       </div>
     );
   }
@@ -33,7 +33,7 @@ function RecipeDetails() {
       <h3>Instructions:</h3>
       <p>{recipe.instructions}</p>
       <img src={recipe.photo} alt={recipe.name} style={{ maxWidth: '300px' }} />
-      <button onClick={() => navigate('/home')}>Back to Home</button>
+      <button onClick={() => navigate('/home', { state: { recipes: storedRecipes } })}>Back to Home</button>
     </div>
   );
 }
