@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import RecipeSearch from '../components/RecipeSearch';
-import RecipeDetails from '../components/RecipeDetails';
 import BackToHomeButton from '../components/BackToHomeButton';
 import oldRecipes from "../data/recipes.json"
 
@@ -9,66 +8,28 @@ function Home() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const [searchResults, setSearchResults] = useState([]);
-  const [selectedRecipe, setSelectedRecipe] = useState(null);
-  const [mealTypeFilter, setMealTypeFilter] = useState('all');
   const [recipes, setRecipes] = useState(location.state?.recipes);
+  const [mealTypeFilter, setMealTypeFilter] = useState('all');
+  const [searchResults, setSearchResults] = useState(null)
 
+  // to set the recipes when home page is being rendered
+  // if it's rendered from sign-in: by default we must store all the recipes from the JSON to local storage
+  // if coming from any other page, those pages will send recipes are being sent
+  // that is stored in recipes state using "useLocation hook" - check reference video
   useEffect(() => {
     !location.state?.recipes && localStorage.setItem("recipes", JSON.stringify(oldRecipes))
-  }, [recipes])
-  console.log(`recipes: ${JSON.stringify(recipes)}`)
+    setRecipes(JSON.parse(localStorage.getItem("recipes")))
+  }, [])
 
-  const filterRecipesByMealType = (mealType) => {
-    // const recipes = JSON.parse(localStorage.getItem('recipes')) || [];
-    console.log(`in filter r by m-type: ${mealType}, mealtypefilter: ${mealTypeFilter}`)
-
-    if (mealType === 'all') {
-      setSearchResults(recipes);
-    } else {
-      const filteredRecipes = recipes?.filter((recipe) => recipe.mealType === mealType);
-      setSearchResults(filteredRecipes);
-    }
-  };
-
-
-  useEffect(() => {
-    const recipes = JSON.parse(localStorage.getItem('recipes')) || [];
-    setSearchResults(recipes);
-  }, []);
-
-
-  const handleRecipeSearch = (query) => {
-    const recipes = JSON.parse(localStorage.getItem('recipes')) || [];
-    const filteredRecipes = recipes.filter((recipe) =>
-      recipe.name.toLowerCase().includes(query.toLowerCase())
-    );
-
-
-    if (mealTypeFilter !== 'all') {
-      const filteredByMealType = filteredRecipes.filter((recipe) => recipe.mealType === mealTypeFilter);
-      setSearchResults(filteredByMealType);
-    } else {
-      setSearchResults(filteredRecipes);
-    }
-  };
-
-
-  const handleRecipeSelect = (recipe) => {
-    setSelectedRecipe(recipe);
-  };
-
-  const handleMealTypeFilter = (event) => {
-    const selectedMealType = event.target.value;
-    console.log(`in dhandle meal type filter: ${selectedMealType}`)
-    setMealTypeFilter(selectedMealType);
-    filterRecipesByMealType(selectedMealType);
+  const handleFilter = (e) => {
+    setMealTypeFilter(e.target.value)
+    console.log(`in filter r by mealtypefilter: ${mealTypeFilter}, search results: ${searchResults}`);
   };
 
   return (
     <div className="home-container">
       <div className="top-right">
-        <RecipeSearch onSearch={handleRecipeSearch} />
+        {/* <RecipeSearch onSearch={handleRecipeSearch} /> @Vanessa: please work on this again */}
       </div>
 
       <h1>Welcome to the Home Page</h1>
@@ -77,7 +38,7 @@ function Home() {
       <button onClick={() => navigate('/add-item')}>Add Recipe</button>
 
       <h2>Filter by Meal Type:</h2>
-      <select value={mealTypeFilter} onChange={handleMealTypeFilter}>
+      <select value={mealTypeFilter} onChange={handleFilter}>
         <option value="all">All</option>
         <option value="breakfast">Breakfast</option>
         <option value="lunch">Lunch</option>
@@ -86,34 +47,30 @@ function Home() {
 
       <h2>Recipes</h2>
       <ul>
-        {searchResults?.map((recipe) => (
-          <li key={recipe.id} onClick={() => handleRecipeSelect(recipe)}>
-            <Link to={`/recipe/${recipe.id}`}>{recipe.name}</Link>
-          </li>
-        ))}
-        {/* {location.state?.recipes && location.state?.recipes.map((recipe) => (
-          <li key={recipe.id} onClick={() => handleRecipeSelect(recipe)}>
-            <Link to={`/recipe/${recipe.id}`}>{recipe.name}</Link>
-          </li>
-        ))}
+        {/* if mealTypeFilter says all - show all recipes, otherwise, filter the recipes based on the type & then show whatever is left */}
+        {
+          mealTypeFilter === "all" && recipes?.map((recipe) => (
+            <li key={recipe.id}>
+              <Link to={`/recipe/${recipe.id}`}>{recipe.name}</Link>
+            </li>
+          ))
+        }
 
-        {!location.state?.recipes && oldRecipes.map((recipe) => (
-          <li key={recipe.id} onClick={() => handleRecipeSelect(recipe)}>
-            <Link to={`/recipe/${recipe.id}`}>{recipe.name}</Link>
-          </li>
-        ))
-        } */}
+        {
+          mealTypeFilter !== "all" &&
+          recipes.filter(recipe => recipe.mealType === `${mealTypeFilter}`)
+            .map(recipe => (
+              <li key={recipe.id}>
+                <Link to={`/recipe/${recipe.id}`}>{recipe.name}</Link>
+              </li>
+            ))
+        }
       </ul>
-
-      {/* <p>selected recipe {`${selectedRecipe}`}</p>
-      {selectedRecipe && (
-        <>
-          <BackToHomeButton />
-          <RecipeDetails recipe={selectedRecipe} />
-        </>
-      )} */}
     </div>
   );
 }
 
 export default Home;
+
+
+// to pass the state from one page to another useLocation + useNavigation: https://www.youtube.com/watch?v=kibtFP9wfLM

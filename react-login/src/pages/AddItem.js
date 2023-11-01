@@ -152,4 +152,3 @@ export default AddItem;
 
 // reference: to pass state using useNavigate hook
 // https://stackoverflow.com/questions/71588182/cannot-pass-state-using-usenavigate-in-react-router-dom-v6
-// https://www.youtube.com/watch?v=kibtFP9wfLM
