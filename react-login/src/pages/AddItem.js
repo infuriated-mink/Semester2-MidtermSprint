@@ -138,7 +138,7 @@ function AddItem() {
         </div>
       </form>
       <div>
-        <button type="button" onClick={() => navigate(`/home`, { state: { recipes } })}>
+        <button type="button" onClick={() => navigate(`/home`, { state: { newRecipes: recipes } })}>
           Back to Home
         </button>
       </div>
@@ -152,3 +152,4 @@ export default AddItem;
 
 // reference: to pass state using useNavigate hook
 // https://stackoverflow.com/questions/71588182/cannot-pass-state-using-usenavigate-in-react-router-dom-v6
+// https://www.youtube.com/watch?v=kibtFP9wfLM

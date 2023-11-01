@@ -1,22 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useNavigate, useParams } from 'react-router-dom';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import RecipeSearch from '../components/RecipeSearch';
 import RecipeDetails from '../components/RecipeDetails';
 import BackToHomeButton from '../components/BackToHomeButton';
 import oldRecipes from "../data/recipes.json"
 
-function Home({ newRecipes }) {
+function Home() {
   const navigate = useNavigate();
   const [searchResults, setSearchResults] = useState([]);
   const [selectedRecipe, setSelectedRecipe] = useState(null);
   const [mealTypeFilter, setMealTypeFilter] = useState('all');
   const [recipes, setRecipes] = useState(oldRecipes);
-
+  const location = useLocation();
 
   useEffect(() => {
-    setRecipes(newRecipes)
-  }, [newRecipes])
-  console.log(`new recipes: ${newRecipes}`)
+    !location.state?.newRecipes && localStorage.setItem("recipes", JSON.stringify(recipes))
+  }, [])
 
   const filterRecipesByMealType = (mealType) => {
     // const recipes = JSON.parse(localStorage.getItem('recipes')) || [];
@@ -83,13 +82,13 @@ function Home({ newRecipes }) {
 
       <h2>Recipes</h2>
       <ul>
-        {newRecipes && newRecipes.map((recipe) => (
+        {location.state?.newRecipes && location.state?.newRecipes.map((recipe) => (
           <li key={recipe.id} onClick={() => handleRecipeSelect(recipe)}>
             <Link to={`/recipe/${recipe.id}`}>{recipe.name}</Link>
           </li>
         ))}
 
-        {!newRecipes && oldRecipes.map((recipe) => (
+        {!location.state?.newRecipes && oldRecipes.map((recipe) => (
           <li key={recipe.id} onClick={() => handleRecipeSelect(recipe)}>
             <Link to={`/recipe/${recipe.id}`}>{recipe.name}</Link>
           </li>
