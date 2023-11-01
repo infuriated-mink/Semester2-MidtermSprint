@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import RecipeSearch from '../components/RecipeSearch';
-import BackToHomeButton from '../components/BackToHomeButton';
 import oldRecipes from "../data/recipes.json"
+import BackToAuthButton from '../components/Logout';
 
 function Home() {
   const navigate = useNavigate();
@@ -52,7 +52,6 @@ function Home() {
   const clearSearch = () => {
     setSearchQuery('');
   };
-
   return (
     <div className="home-container">
       <div className="top-right">
