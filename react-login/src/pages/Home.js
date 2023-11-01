@@ -12,19 +12,21 @@ function Home() {
   const [searchResults, setSearchResults] = useState([]);
   const [selectedRecipe, setSelectedRecipe] = useState(null);
   const [mealTypeFilter, setMealTypeFilter] = useState('all');
-  const [recipes, setRecipes] = useState(location.storage?.recipes);
+  const [recipes, setRecipes] = useState(location.state?.recipes);
 
   useEffect(() => {
     !location.state?.recipes && localStorage.setItem("recipes", JSON.stringify(oldRecipes))
-  }, [])
+  }, [recipes])
+  console.log(`recipes: ${JSON.stringify(recipes)}`)
 
   const filterRecipesByMealType = (mealType) => {
     // const recipes = JSON.parse(localStorage.getItem('recipes')) || [];
+    console.log(`in filter r by m-type: ${mealType}, mealtypefilter: ${mealTypeFilter}`)
 
     if (mealType === 'all') {
       setSearchResults(recipes);
     } else {
-      const filteredRecipes = recipes.filter((recipe) => recipe.mealType === mealType);
+      const filteredRecipes = recipes?.filter((recipe) => recipe.mealType === mealType);
       setSearchResults(filteredRecipes);
     }
   };
@@ -58,6 +60,7 @@ function Home() {
 
   const handleMealTypeFilter = (event) => {
     const selectedMealType = event.target.value;
+    console.log(`in dhandle meal type filter: ${selectedMealType}`)
     setMealTypeFilter(selectedMealType);
     filterRecipesByMealType(selectedMealType);
   };
@@ -83,7 +86,7 @@ function Home() {
 
       <h2>Recipes</h2>
       <ul>
-        {searchResults.map((recipe) => (
+        {searchResults?.map((recipe) => (
           <li key={recipe.id} onClick={() => handleRecipeSelect(recipe)}>
             <Link to={`/recipe/${recipe.id}`}>{recipe.name}</Link>
           </li>
