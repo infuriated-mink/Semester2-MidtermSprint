@@ -1,9 +1,14 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 function AddItem() {
   const navigate = useNavigate();
   const [idCounter, setIdCounter] = useState(5);
+
+  const [recipes, setRecipes] = useState(
+    JSON.parse(localStorage.getItem("recipes")) || []
+  );
+  console.log(`recipes: ${JSON.stringify(recipes)}`)
 
   const [item, setItem] = useState({
     name: '',
@@ -44,13 +49,7 @@ function AddItem() {
     };
 
     setIdCounter(idCounter + 1);
-
-    const existingRecipes = JSON.parse(localStorage.getItem('recipes')) || [];
-
-    existingRecipes.push(newRecipe);
-
-    localStorage.setItem('recipes', JSON.stringify(existingRecipes));
-
+    setRecipes(prevRecipe => [...prevRecipe, newRecipe])
 
     setItem({
       name: '',
@@ -61,6 +60,12 @@ function AddItem() {
       mealType: '',
     });
   };
+
+  useEffect(() => {
+    localStorage.setItem("recipes", JSON.stringify(recipes))
+  }, [recipes])
+  console.log(`effecthook: ${recipes.length}`)
+
 
   return (
     <div>
@@ -133,7 +138,7 @@ function AddItem() {
         </div>
       </form>
       <div>
-        <button type="button" onClick={() => navigate('/home')}>
+        <button type="button" onClick={() => navigate(`/home`, { state: { recipes } })}>
           Back to Home
         </button>
       </div>
@@ -142,3 +147,8 @@ function AddItem() {
 }
 
 export default AddItem;
+
+
+
+// reference: to pass state using useNavigate hook
+// https://stackoverflow.com/questions/71588182/cannot-pass-state-using-usenavigate-in-react-router-dom-v6

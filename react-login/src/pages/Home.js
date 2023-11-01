@@ -1,16 +1,25 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useNavigate, useParams } from 'react-router-dom';
 import RecipeSearch from '../components/RecipeSearch';
 import RecipeDetails from '../components/RecipeDetails';
 import BackToHomeButton from '../components/BackToHomeButton';
+import oldRecipes from "../data/recipes.json"
 
-function Home() {
+function Home({ newRecipes }) {
   const navigate = useNavigate();
   const [searchResults, setSearchResults] = useState([]);
   const [selectedRecipe, setSelectedRecipe] = useState(null);
   const [mealTypeFilter, setMealTypeFilter] = useState('all');
+  const [recipes, setRecipes] = useState(oldRecipes);
+
+
+  useEffect(() => {
+    setRecipes(newRecipes)
+  }, [newRecipes])
+  console.log(`new recipes: ${newRecipes}`)
+
   const filterRecipesByMealType = (mealType) => {
-    const recipes = JSON.parse(localStorage.getItem('recipes')) || [];
+    // const recipes = JSON.parse(localStorage.getItem('recipes')) || [];
 
     if (mealType === 'all') {
       setSearchResults(recipes);
@@ -20,7 +29,7 @@ function Home() {
     }
   };
 
- 
+
   useEffect(() => {
     const recipes = JSON.parse(localStorage.getItem('recipes')) || [];
     setSearchResults(recipes);
@@ -33,7 +42,7 @@ function Home() {
       recipe.name.toLowerCase().includes(query.toLowerCase())
     );
 
-  
+
     if (mealTypeFilter !== 'all') {
       const filteredByMealType = filteredRecipes.filter((recipe) => recipe.mealType === mealTypeFilter);
       setSearchResults(filteredByMealType);
@@ -74,11 +83,18 @@ function Home() {
 
       <h2>Recipes</h2>
       <ul>
-        {searchResults.map((recipe) => (
+        {newRecipes && newRecipes.map((recipe) => (
           <li key={recipe.id} onClick={() => handleRecipeSelect(recipe)}>
             <Link to={`/recipe/${recipe.id}`}>{recipe.name}</Link>
           </li>
         ))}
+
+        {!newRecipes && oldRecipes.map((recipe) => (
+          <li key={recipe.id} onClick={() => handleRecipeSelect(recipe)}>
+            <Link to={`/recipe/${recipe.id}`}>{recipe.name}</Link>
+          </li>
+        ))
+        }
       </ul>
 
       {selectedRecipe && (
