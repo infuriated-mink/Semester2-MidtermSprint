@@ -12,6 +12,7 @@ function Home() {
   const [mealTypeFilter, setMealTypeFilter] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState(null);
+  const [filteredRecipes, setFilteredRecipes] = useState(null);
 
   // to set the recipes when home page is being rendered
   // if it's rendered from sign-in: by default we must store all the recipes from the JSON to local storage
@@ -23,17 +24,28 @@ function Home() {
     )
   }, [])
 
+
   // Handle search
+  // 1. if mealType is all - gives result based on all recipes
+  // 2. if mealType is not "all", the we must display result based on filtered recipes
   useEffect(() => {
     if (searchQuery) {
-      const filteredRecipes = recipes.filter((recipe) =>
+      filteredRecipes?.filter((recipe) =>
         recipe.name.toLowerCase().includes(searchQuery.toLowerCase())
       );
       setSearchResults(filteredRecipes);
     } else {
       setSearchResults(null);
     }
-  }, [searchQuery, recipes]);
+  }, [searchQuery, filteredRecipes]);
+
+  // filter based on mealType
+  useEffect(() => {
+    setFilteredRecipes(
+      mealTypeFilter === "all" ? recipes : recipes.filter(recipe => recipe.mealType === mealTypeFilter)
+    )
+  }, [mealTypeFilter, recipes])
+
 
   const handleFilter = (e) => {
     setMealTypeFilter(e.target.value);
@@ -62,23 +74,16 @@ function Home() {
       <ul>
         {searchQuery
           ? searchResults?.map((recipe) => (
-              <li key={recipe.id}>
-                <Link to={`/recipe/${recipe.id}`}>{recipe.name}</Link>
-              </li>
-            ))
-          : mealTypeFilter === "all"
-          ? recipes?.map((recipe) => (
-              <li key={recipe.id}>
-                <Link to={`/recipe/${recipe.id}`}>{recipe.name}</Link>
-              </li>
-            ))
-          : recipes
-              .filter(recipe => recipe.mealType === mealTypeFilter)
-              .map(recipe => (
-                <li key={recipe.id}>
-                  <Link to={`/recipe/${recipe.id}`}>{recipe.name}</Link>
-                </li>
-              ))}
+            <li key={recipe.id}>
+              <Link to={`/recipe/${recipe.id}`}>{recipe.name}</Link>
+            </li>
+          )) :
+          filteredRecipes?.map(recipe => (
+            <li key={recipe.id}>
+              <Link to={`/recipe/${recipe.id}`}>{recipe.name}</Link>
+            </li>
+          ))
+        }
       </ul>
     </div>
   );
