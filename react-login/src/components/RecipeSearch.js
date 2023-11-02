@@ -7,6 +7,11 @@ function RecipeSearch({ onSearch }) {
     onSearch(searchQuery);
   };
 
+  const handleClearSearch = () => {
+    setSearchQuery('');
+    onSearch('');
+  };
+
   return (
     <div>
       <input
@@ -16,6 +21,10 @@ function RecipeSearch({ onSearch }) {
         onChange={(e) => setSearchQuery(e.target.value)}
       />
       <button onClick={handleSearch}>Search</button>
+      {
+        searchQuery && (
+          <button onClick={handleClearSearch}>Clear</button>
+        )}
     </div>
   );
 }

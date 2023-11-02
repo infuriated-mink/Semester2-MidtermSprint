@@ -49,16 +49,11 @@ function Home() {
     setMealTypeFilter(e.target.value);
   };
 
-  const clearSearch = () => {
-    setSearchQuery('');
-  };
   return (
     <div className="home-container">
       <div className="top-right">
         <RecipeSearch onSearch={setSearchQuery} />
-        {searchQuery && (
-          <button onClick={clearSearch}>Clear</button>
-        )}
+
       </div>
 
       <h1>Welcome to the Home Page</h1>
