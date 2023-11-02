@@ -1,5 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
 import userData from "../data/user.json";
 
 export default function Auth({ isSignUp }) {
@@ -9,12 +12,34 @@ export default function Auth({ isSignUp }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [loginError, setLoginError] = useState("");
+  const [isToastOpen, setIsToastOpen] = useState(true);
+
+  const notify = (user) => {
+    setIsToastOpen(true);
+    toast(
+      `Welcome ${user.firstName}`,
+      { position: toast.POSITION.TOP_CENTER },
+      { autoclose: 4000 },
+      { onClose: () => setIsToastOpen(false) }
+    )
+  };
+
+  function wait(time) {
+    return new Promise(resolve => {
+      setTimeout(resolve, time);
+    });
+  }
+
+  async function goToPage() {
+    await wait(5000);
+    navigate(`/home`);
+  }
 
   const handleLogin = () => {
     if (userData[username] && userData[username].password === password) {
       const user = userData[username];
-      alert(`Welcome back, ${user.firstName}!`);
-      navigate("/home");
+      notify(user);
+      goToPage();
     } else {
       setLoginError("Username and password do not match.");
     }
@@ -27,8 +52,8 @@ export default function Auth({ isSignUp }) {
 
       userData[username] = {
         password,
-        firstName: name, 
-        email: email, 
+        firstName: name,
+        email: email,
       };
 
       navigate("/home");
@@ -113,6 +138,10 @@ export default function Auth({ isSignUp }) {
           </div>
         </div>
       </form>
+      <ToastContainer />
     </div>
   );
 }
+
+
+// referece: https://stackoverflow.com/questions/49840197/how-can-i-set-delay-function-in-react-routing

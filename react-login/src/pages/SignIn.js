@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import userData from "../data/user.json";
 
+
 export default function SignIn() {
   const navigate = useNavigate();
   const [username, setUsername] = useState("");
@@ -10,12 +11,12 @@ export default function SignIn() {
 
   const handleSignIn = () => {
     if (userData[username] && userData[username].password === password) {
-      alert(`Welcome back, ${userData[username].firstName}!`);
+      // alert(`Welcome back, ${userData[username].firstName}!`);
       navigate("/home");
     } else {
       setLoginError("Username and password do not match.");
     }
-  };  
+  };
 
   return (
     <div className="Auth-form-container">
