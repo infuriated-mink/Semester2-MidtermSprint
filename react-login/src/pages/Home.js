@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import RecipeSearch from '../components/RecipeSearch';
-import BackToHomeButton from '../components/BackToHomeButton';
 import oldRecipes from "../data/recipes.json"
+import BackToAuthButton from '../components/Logout';
 
 function Home() {
   const navigate = useNavigate();
@@ -14,7 +14,7 @@ function Home() {
   const [searchResults, setSearchResults] = useState(null);
   const [filteredRecipes, setFilteredRecipes] = useState(null);
 
-  // to set the recipes when home page is being rendered
+  // to set the recipes when the home page is being rendered
   // if it's rendered from sign-in: by default we must store all the recipes from the JSON to local storage
   // if coming from any other page, those pages will send recipes are being sent
   // that is stored in recipes state using "useLocation hook" - check reference video
@@ -24,16 +24,15 @@ function Home() {
     )
   }, [])
 
-
   // Handle search
   // 1. if mealType is all - gives result based on all recipes
-  // 2. if mealType is not "all", the we must display result based on filtered recipes
+  // 2. if mealType is not "all", then we must display results based on filtered recipes
   useEffect(() => {
     if (searchQuery) {
-      filteredRecipes?.filter((recipe) =>
+      const filteredResults = filteredRecipes?.filter((recipe) =>
         recipe.name.toLowerCase().includes(searchQuery.toLowerCase())
       );
-      setSearchResults(filteredRecipes);
+      setSearchResults(filteredResults);
     } else {
       setSearchResults(null);
     }
@@ -46,15 +45,20 @@ function Home() {
     )
   }, [mealTypeFilter, recipes])
 
-
   const handleFilter = (e) => {
     setMealTypeFilter(e.target.value);
   };
 
+  const clearSearch = () => {
+    setSearchQuery('');
+  };
   return (
     <div className="home-container">
       <div className="top-right">
         <RecipeSearch onSearch={setSearchQuery} />
+        {searchQuery && (
+          <button onClick={clearSearch}>Clear</button>
+        )}
       </div>
 
       <h1>Welcome to the Home Page</h1>
@@ -77,8 +81,8 @@ function Home() {
             <li key={recipe.id}>
               <Link to={`/recipe/${recipe.id}`}>{recipe.name}</Link>
             </li>
-          )) :
-          filteredRecipes?.map(recipe => (
+          ))
+          : filteredRecipes?.map(recipe => (
             <li key={recipe.id}>
               <Link to={`/recipe/${recipe.id}`}>{recipe.name}</Link>
             </li>
