@@ -1,23 +1,22 @@
-import React, { useState } from 'react';
-import { addRecipe } from '../components/recipes'; 
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
-
-const generateUniqueID = () => {
-  return '_' + Math.random().toString(36).substr(2, 9);
-};
 
 function AddItem() {
   const navigate = useNavigate();
+  const [idCounter, setIdCounter] = useState(5);
+
+  const [recipes, setRecipes] = useState(
+    JSON.parse(localStorage.getItem("recipes")) || []
+  );
+  console.log(`recipes: ${JSON.stringify(recipes)}`)
+
   const [item, setItem] = useState({
-    id: generateUniqueID(), 
     name: '',
     description: '',
     photo: '',
     ingredients: '',
     instructions: '',
     mealType: '',
-
   });
 
   const handleInputChange = (e) => {
@@ -39,35 +38,34 @@ function AddItem() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-
     const newRecipe = {
-      id: item.id,
+      id: idCounter,
       name: item.name,
       description: item.description,
       photo: item.photo,
       ingredients: item.ingredients,
       instructions: item.instructions,
       mealType: item.mealType,
-
     };
 
-
-    addRecipe(newRecipe);
-
+    setIdCounter(idCounter + 1);
+    setRecipes(prevRecipe => [...prevRecipe, newRecipe])
 
     setItem({
-      id: generateUniqueID(), 
       name: '',
       description: '',
       photo: '',
       ingredients: '',
       instructions: '',
       mealType: '',
-    
     });
-
-    navigate('/home');
   };
+
+  useEffect(() => {
+    localStorage.setItem("recipes", JSON.stringify(recipes))
+  }, [recipes])
+  console.log(`effecthook: ${recipes.length}`)
+
 
   return (
     <div>
@@ -137,11 +135,20 @@ function AddItem() {
         </div>
         <div>
           <button type="submit">Add Recipe</button>
-          <button type="button" onClick={() => navigate('/home')}>Back to Home</button>
         </div>
       </form>
+      <div>
+        <button type="button" onClick={() => navigate(`/home`, { state: { recipes } })}>
+          Back to Home
+        </button>
+      </div>
     </div>
   );
 }
 
 export default AddItem;
+
+
+
+// reference: to pass state using useNavigate hook
+// https://stackoverflow.com/questions/71588182/cannot-pass-state-using-usenavigate-in-react-router-dom-v6

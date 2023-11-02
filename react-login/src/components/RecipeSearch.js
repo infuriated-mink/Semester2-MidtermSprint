@@ -7,18 +7,24 @@ function RecipeSearch({ onSearch }) {
     onSearch(searchQuery);
   };
 
+  const handleClearSearch = () => {
+    setSearchQuery('');
+    onSearch('');
+  };
+
   return (
-    <div className="recipe-search-container">
+    <div>
       <input
         type="text"
         placeholder="Search for recipes..."
         value={searchQuery}
-        onChange={(e) => setSearchQuery(e.target.value)} 
-        className="rounded-search-bar"
+        onChange={(e) => setSearchQuery(e.target.value)}
       />
-      <button onClick={handleSearch} className="rounded-search-button">
-        Search
-      </button>
+      <button onClick={handleSearch}>Search</button>
+      {
+        searchQuery && (
+          <button onClick={handleClearSearch}>Clear</button>
+        )}
     </div>
   );
 }

@@ -1,11 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import Button from 'react-bootstrap/Button';
-import Col from 'react-bootstrap/Col';
-import Row from 'react-bootstrap/Row';
-import Toast from 'react-bootstrap/Toast';
+import userData from "../data/user.json";
 
-import userData from "../user.json";
 
 export default function SignIn() {
   const navigate = useNavigate();
@@ -15,16 +11,14 @@ export default function SignIn() {
   const [show, setShow] = useState(false);
 
 
-  const handleSignIn = (showToast) => {
-    if (showToast && userData[username] && userData[username].password === password) {
-      setShow(true)
-      DisplayToast({ showToast: true, userData: userData })
+  const handleSignIn = () => {
+    if (userData[username] && userData[username].password === password) {
+      // alert(`Welcome back, ${userData[username].firstName}!`);
+      navigate("/home");
     } else {
       setLoginError("Username and password do not match.");
     }
   };
-
-
 
   return (
     <div className="Auth-form-container">

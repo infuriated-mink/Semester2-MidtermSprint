@@ -1,32 +1,39 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
-import recipes from '../components/recipes';
-import BackToHomeButton from './BackToHomeButton';
-
+import { useParams, useNavigate } from 'react-router-dom';
 
 function RecipeDetails() {
   const { id } = useParams();
-  const recipe = recipes.find((r) => r.id === Number(id));
+  const navigate = useNavigate();
+
+  const storedRecipes = JSON.parse(localStorage.getItem('recipes')) || [];
+  const recipe = storedRecipes.find((r) => r.id === Number(id));
 
   if (!recipe) {
-    return <div>No recipe available.</div>;
+    return (
+      <div>
+        <p>No recipe available.</p>
+        <button onClick={() => navigate('/home', { state: { recipes: storedRecipes } })}>Back to Home</button>
+      </div>
+    );
   }
+
+  const ingredientsArray = Array.isArray(recipe.ingredients) ? recipe.ingredients : [recipe.ingredients];
 
   return (
     <div>
-      <BackToHomeButton />
       <h2>{recipe.name}</h2>
-      <img src={recipe.image} alt={recipe.name} /> {/* Display the image */}
+      <p>Description: {recipe.description}</p>
+      <p>Meal Type: {recipe.mealType}</p>
       <h3>Ingredients:</h3>
       <ul>
-        {recipe.ingredients.map((ingredient, index) => (
+        {ingredientsArray.map((ingredient, index) => (
           <li key={index}>{ingredient}</li>
         ))}
       </ul>
-      <h3>Description:</h3>
-      <p>{recipe.description}</p>
       <h3>Instructions:</h3>
       <p>{recipe.instructions}</p>
+      <img src={recipe.photo} alt={recipe.name} style={{ maxWidth: '300px' }} />
+      <button onClick={() => navigate('/home', { state: { recipes: storedRecipes } })}>Back to Home</button>
     </div>
   );
 }
