@@ -127,7 +127,7 @@ export default function Auth({ isSignUp }) {
             {isSignUp ? (
               <>
                 Already registered?{" "}
-                <Link to="/signin">Sign In</Link>
+                <Link to="/">Sign In</Link>
               </>
             ) : (
               <>

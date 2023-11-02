@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import RecipeSearch from '../components/RecipeSearch';
 import oldRecipes from "../data/recipes.json"
-import BackToAuthButton from '../components/Logout';
-
+import Logout from '../components/Logout';
 function Home({ reciepes }) {
   const navigate = useNavigate();
   const location = useLocation();
@@ -55,7 +54,7 @@ function Home({ reciepes }) {
         <RecipeSearch onSearch={setSearchQuery} />
 
       </div>
-
+      <Logout />
       <h1>Welcome to the Home Page</h1>
       <p>This is the main content of your home page.</p>
 

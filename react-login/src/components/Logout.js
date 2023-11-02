@@ -5,7 +5,7 @@ function BackToAuthButton() {
   const navigate = useNavigate();
 
   const handleBackToAuth = () => {
-    navigate('/auth'); 
+    navigate('/'); 
   };
 
   return (
