@@ -7,6 +7,11 @@ function RecipeSearch({ onSearch }) {
     onSearch(searchQuery);
   };
 
+  const handleClearSearch = () => {
+    setSearchQuery('');
+    onSearch('');
+  };
+
 <<<<<<< Updated upstream
 =======
 <<<<<<< Updated upstream
@@ -21,7 +26,7 @@ function RecipeSearch({ onSearch }) {
 
 >>>>>>> Stashed changes
   return (
-    <div className="recipe-search-container">
+    <div>
       <input
         type="text"
         placeholder="Search for recipes..."
@@ -37,9 +42,11 @@ function RecipeSearch({ onSearch }) {
 >>>>>>> Stashed changes
 >>>>>>> Stashed changes
       />
-      <button onClick={handleSearch} className="rounded-search-button">
-        Search
-      </button>
+      <button onClick={handleSearch}>Search</button>
+      {
+        searchQuery && (
+          <button onClick={handleClearSearch}>Clear</button>
+        )}
     </div>
   );
 }
