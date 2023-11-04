@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 
 function AddItem() {
   const navigate = useNavigate();
-  const [idCounter, setIdCounter] = useState(5);
 
   const [recipes, setRecipes] = useState(
     JSON.parse(localStorage.getItem("recipes")) || []
@@ -16,13 +15,21 @@ function AddItem() {
     photo: '',
     ingredients: '',
     instructions: '',
-    mealType: '',
+    mealType: 'breakfast',
   });
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setItem({ ...item, [name]: value });
   };
+
+  // this is ideal way to handle the radio button special way - it's a bit different than others
+  // reference: https://bobbyhadz.com/blog/react-set-default-checked-radio-button
+  const [mealType, setMealType] = useState("breakfast")
+  const handleMealTypeChange = (e) => {
+    setMealType(e.target.value)
+    setItem({ ...item, mealType: e.target.value })
+  }
 
   const handlePhotoChange = (e) => {
     const file = e.target.files[0];
@@ -39,7 +46,7 @@ function AddItem() {
     e.preventDefault();
 
     const newRecipe = {
-      id: idCounter,
+      id: recipes.length + 1, // see that clever trick? always will give next id - if done correctly, no need to do extra things
       name: item.name,
       description: item.description,
       photo: item.photo,
@@ -48,17 +55,18 @@ function AddItem() {
       mealType: item.mealType,
     };
 
-    setIdCounter(idCounter + 1);
+    console.log(`new-recipe: ${JSON.stringify(newRecipe)}`)
     setRecipes(prevRecipe => [...prevRecipe, newRecipe])
 
+    setMealType("breakfast")
     setItem({
       name: '',
       description: '',
       photo: '',
       ingredients: '',
       instructions: '',
-      mealType: '',
-    });
+      mealType: 'breakfast',
+    })
   };
 
   useEffect(() => {
@@ -122,8 +130,9 @@ function AddItem() {
           />
         </div>
         <div>
+
           <label>Meal Type:</label>
-          <select
+          {/* <select
             name="mealType"
             value={item.mealType}
             onChange={handleInputChange}
@@ -131,18 +140,51 @@ function AddItem() {
             <option value="breakfast">Breakfast</option>
             <option value="lunch">Lunch</option>
             <option value="dinner">Dinner</option>
-          </select>
+          </select> */}
+          <div>
+            <input
+              type="radio"
+              id="breakfast"
+              name="breakfast"
+              value="breakfast"
+              checked={mealType === "breakfast"}
+              onChange={handleMealTypeChange}
+            />
+            <label htmlFor="breakfast">Breakfast</label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              id="lunch"
+              name="lunch"
+              value="lunch"
+              checked={mealType === "lunch"}
+              onChange={handleMealTypeChange}
+            />
+            <label htmlFor="lunch">Lunch</label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              id="dinner"
+              name="dinner"
+              value="dinner"
+              checked={mealType === "dinner"}
+              onChange={handleMealTypeChange}
+            />
+            <label htmlFor="dinner">Dinner</label>
+          </div>
         </div>
         <div>
           <button type="submit">Add Recipe</button>
         </div>
-      </form>
+      </form >
       <div>
         <button type="button" onClick={() => navigate(`/home`, { state: { recipes } })}>
           Back to Home
         </button>
       </div>
-    </div>
+    </div >
   );
 }
 
