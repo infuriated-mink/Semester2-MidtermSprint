@@ -155,10 +155,10 @@ add-item-link {
   background-size: cover;
 }
 .rectangle8 {
-  position: absolute;
+  /* position: absolute;
   left: 595px;
   top: 27px;
-  width: 385px;
+  width: 385px; */
   height: 63px;
   border-radius: 72px;
   background-color: #ffffff80;
