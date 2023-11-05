@@ -5,9 +5,7 @@ import "./index.css";
 import Auth from "./components/Auth";
 import Home from "./pages/Home";
 import AddItem from './pages/AddItem';
-import SignIn from "./pages/SignIn";
-import SignUp from "./pages/SignUp";
-import RecipeDetails from "./components/RecipeDetails"; 
+import RecipeDetails from "./components/RecipeDetails";
 
 function App() {
   return (
@@ -17,8 +15,6 @@ function App() {
         <Route path="/signup" element={<Auth isSignUp={true} />} />
         <Route path="/home" element={<Home />} />
         <Route path="/add-item" element={<AddItem />} />
-        <Route path="/signin" element={<SignIn />} />
-        <Route path="/signup" element={<SignUp />} />
         <Route path="/recipe/:id" element={<RecipeDetails />} /> {/* Add a route for recipe details */}
       </Routes>
     </BrowserRouter>

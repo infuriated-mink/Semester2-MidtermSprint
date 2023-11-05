@@ -1,31 +1,30 @@
 import React, { useState } from 'react';
+import '../css/RecipeSearch.css';
 
 function RecipeSearch({ onSearch }) {
   const [searchQuery, setSearchQuery] = useState('');
 
   const handleSearch = () => {
     onSearch(searchQuery);
+    setSearchQuery('');
   };
 
-  const handleClearSearch = () => {
-    setSearchQuery('');
-    onSearch('');
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      handleSearch();
+    }
   };
 
   return (
     <div className="rectangle-whatever">
       <input
-        className="rounded-search-bar"
+        className="searchbar"
         type="text"
-        placeholder="Search for recipes..."
+        placeholder="Looking for something else?"
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
+        onKeyPress={handleKeyPress}
       />
-      <button className="rounded-search-button" onClick={handleSearch}>Search</button>
-      {
-        searchQuery && (
-          <button className="rounded-search-button" onClick={handleClearSearch}>Clear</button>
-        )}
     </div>
   );
 }

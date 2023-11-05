@@ -16,8 +16,18 @@ function RecipeDetails() {
       </div>
     );
   }
+  
+  const formattedIngredients = recipe.ingredients.split('\n').map((ingredient, index) => (
+    <li key={index}>{ingredient.trim()}</li>
+  ));
 
-  const ingredientsArray = Array.isArray(recipe.ingredients) ? recipe.ingredients : [recipe.ingredients];
+  const formatInstructions = (instructions) => {
+    return instructions
+      .split('\n')
+      .map((step, index) => (
+        <li key={index}>{step.trim()}</li>
+      ));
+  };
 
   return (
     <div>
@@ -26,12 +36,12 @@ function RecipeDetails() {
       <p>Meal Type: {recipe.mealType}</p>
       <h3>Ingredients:</h3>
       <ul>
-        {ingredientsArray.map((ingredient, index) => (
-          <li key={index}>{ingredient}</li>
-        ))}
+        {formattedIngredients}
       </ul>
       <h3>Instructions:</h3>
-      <p>{recipe.instructions}</p>
+      <ol>
+        {formatInstructions(recipe.instructions)}
+      </ol>
       <img src={recipe.photo} alt={recipe.name} style={{ maxWidth: '300px' }} />
       <button onClick={() => navigate('/home', { state: { recipes: storedRecipes } })}>Back to Home</button>
     </div>
