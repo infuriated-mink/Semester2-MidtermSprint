@@ -70,6 +70,7 @@ function Home({ recipes: propRecipes }) {
         <div className="recipe-cards">
           {searchQuery
             ? searchResults?.map((recipe) => (
+
               <Card key={recipe.id} style={{ width: '18rem' }}>
                 <Card.Img variant="top" src={`/media/${recipe.image}`} alt={recipe.name} />
                 <Card.Body>
@@ -101,3 +102,8 @@ function Home({ recipes: propRecipes }) {
 }
 
 export default Home;
+
+
+
+// source: static images in public folder: https://stackoverflow.com/questions/65376684/accessing-images-from-public-folder-reactjs
+// source: react-boostrap card: https://react-bootstrap.netlify.app/docs/components/cards/
