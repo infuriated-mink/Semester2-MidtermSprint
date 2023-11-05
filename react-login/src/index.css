@@ -91,6 +91,7 @@ label {
 .rectangle-whatever {
   background-color: red;
 }
+
 .root {
   position: relative;
   width: 1000px;
@@ -100,6 +101,7 @@ label {
   background-color: #fff;
   overflow: hidden;
 }
+
 .rectangle7 {
   transform-origin: top left;
   position: absolute;
@@ -109,13 +111,16 @@ label {
   bottom: 61.4175%;
   outline: solid 1px #000;
   background-color: #c0c0c033;
-  background-image:/* webpackIgnore: true */ url('assets/rectangle7.png');
+  background-image:
+    /* webpackIgnore: true */
+    url('assets/rectangle7.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   filter: blur(6px);
   transform: matrix(-1, -0.0024, 0.0024, -1, 0, 0);
 }
+
 .rectangle4 {
   position: absolute;
   left: 0;
@@ -125,6 +130,7 @@ label {
   border-radius: 8px;
   background-color: #ff6347e5;
 }
+
 .rectangle2 {
   position: absolute;
   left: 10.4%;
@@ -133,6 +139,7 @@ label {
   bottom: 98.6345%;
   background-color: #01696e;
 }
+
 .buildBetterRecipesTogether {
   color: #000;
   font-size: 24px;
@@ -148,17 +155,21 @@ label {
   justify-content: center;
   flex-direction: column;
 }
+
 .rectangle6 {
   position: absolute;
   left: 410px;
   top: -13px;
   width: 180px;
   height: 162px;
-  background-image:/* webpackIgnore: true */ url('assets/rectangle6.png');
+  background-image:
+    /* webpackIgnore: true */
+    url('assets/rectangle6.png');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
+
 .rectangle8 {
   /* position: absolute;
   left: 595px;
@@ -169,6 +180,7 @@ label {
   background-color: #ffffff80;
   box-shadow: inset 0px 4px 4px 0px #00000040;
 }
+
 .lookingForSomething {
   color: #727272;
   font-size: 24px;
@@ -183,6 +195,7 @@ label {
   justify-content: center;
   flex-direction: column;
 }
+
 .rectangle14 {
   position: absolute;
   left: 365px;
@@ -193,6 +206,7 @@ label {
   background-color: #f3f3f3;
   box-shadow: 0px 4px 4px 0px #00000040;
 }
+
 .rectangle15 {
   position: absolute;
   left: 50px;
@@ -203,6 +217,7 @@ label {
   background-color: #f3f3f3;
   box-shadow: 0px 4px 4px 0px #00000040;
 }
+
 .rectangle16 {
   position: absolute;
   left: 680px;
@@ -213,6 +228,7 @@ label {
   background-color: #f3f3f3;
   box-shadow: 0px 4px 4px 0px #00000040;
 }
+
 .rectangle17 {
   position: absolute;
   left: 0;
@@ -221,6 +237,7 @@ label {
   height: 257px;
   background-color: #d9d9d9;
 }
+
 .rectangle18 {
   position: absolute;
   left: 0;
@@ -229,6 +246,7 @@ label {
   height: 279px;
   background-color: #a38585;
 }
+
 .featuredItems {
   color: #474747c2;
   font-size: 24px;
@@ -243,6 +261,7 @@ label {
   justify-content: center;
   flex-direction: column;
 }
+
 .rectangle25 {
   position: absolute;
   left: 50px;
@@ -250,12 +269,15 @@ label {
   width: 270px;
   height: 167px;
   border-radius: 22px 22px 0 0;
-  background-image:/* webpackIgnore: true */ url('assets/rectangle25.jpeg');
+  background-image:
+    /* webpackIgnore: true */
+    url('assets/rectangle25.jpeg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   filter: blur(0px);
 }
+
 .rectangle26 {
   position: absolute;
   left: 365px;
@@ -263,12 +285,15 @@ label {
   width: 270px;
   height: 167px;
   border-radius: 22px 22px 0 0;
-  background-image:/* webpackIgnore: true */ url('assets/rectangle26.jpeg');
+  background-image:
+    /* webpackIgnore: true */
+    url('assets/rectangle26.jpeg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   filter: blur(0px);
 }
+
 .rectangle27 {
   position: absolute;
   left: -32px;
@@ -278,6 +303,7 @@ label {
   border-radius: 8px;
   background-color: #ff6347e5;
 }
+
 .chickenAlfredo {
   position: absolute;
   left: 60px;
@@ -287,12 +313,14 @@ label {
   justify-content: center;
   flex-direction: column;
 }
+
 .labelWrapper {
   font-size: 24px;
   font-family: Gentium Book Basic, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
     'Liberation Sans', sans-serif;
   flex-shrink: 1;
 }
+
 .label {
   color: #737373;
   font-size: 24px;
@@ -300,6 +328,7 @@ label {
   font-family: Gentium Book Basic, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
     'Liberation Sans', sans-serif;
 }
+
 .label2 {
   color: #000;
   font-size: 24px;
@@ -307,6 +336,7 @@ label {
   font-family: Gentium Book Basic, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
     'Liberation Sans', sans-serif;
 }
+
 .addNew {
   color: #737373bd;
   font-size: 24px;
@@ -324,6 +354,7 @@ label {
   justify-content: center;
   flex-direction: column;
 }
+
 .spaghettiCarbonara {
   color: #737373;
   font-size: 24px;
@@ -338,6 +369,7 @@ label {
   justify-content: center;
   flex-direction: column;
 }
+
 .rectangle252 {
   position: absolute;
   left: 778.0185px;
@@ -347,6 +379,7 @@ label {
   border-radius: 25px;
   background-color: #f8f8f8;
 }
+
 .rectangle262 {
   transform-origin: top left;
   position: absolute;
@@ -358,6 +391,7 @@ label {
   background-color: #f8f8f8;
   transform: matrix(0, -1, 1, 0, 0, 0);
 }
+
 .line1 {
   position: relative;
   left: 655px;
@@ -367,6 +401,7 @@ label {
   height: 499.008px;
   max-height: 100%;
 }
+
 .line1::before {
   content: '';
   position: absolute;
@@ -379,6 +414,7 @@ label {
   outline: solid 1px #e7e4e4;
   outline-style: dashed;
 }
+
 .spaghettiCarbonaraIsAClassicRo {
   color: #737373;
   font-size: 20px;
@@ -393,6 +429,7 @@ label {
   justify-content: center;
   flex-direction: column;
 }
+
 .chickenAlfredoIsACreamyItalian {
   color: #737373;
   font-size: 20px;
@@ -407,6 +444,7 @@ label {
   justify-content: center;
   flex-direction: column;
 }
+
 .readMore {
   color: #7b7b7b;
   font-size: 20px;
@@ -423,6 +461,7 @@ label {
   justify-content: center;
   flex-direction: column;
 }
+
 .readMore2 {
   color: #7b7b7b;
   font-size: 20px;
@@ -439,6 +478,7 @@ label {
   justify-content: center;
   flex-direction: column;
 }
+
 .ourMission {
   color: #4e4e4e;
   font-size: 24px;
@@ -455,6 +495,7 @@ label {
   justify-content: center;
   flex-direction: column;
 }
+
 .whereToFindUs {
   color: #fff;
   font-size: 24px;
@@ -471,6 +512,7 @@ label {
   justify-content: center;
   flex-direction: column;
 }
+
 .ourMissionAtDishHubIsToProvide {
   color: #4e4e4e;
   font-size: 20px;
@@ -485,6 +527,7 @@ label {
   justify-content: center;
   flex-direction: column;
 }
+
 .line2 {
   position: absolute;
   left: 46px;
@@ -496,6 +539,7 @@ label {
   border-bottom: solid 1px #000;
   background-color: #d9d9d9;
 }
+
 .DishHub {
   color: #fff;
   font-size: 24px;
