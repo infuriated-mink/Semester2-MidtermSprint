@@ -8,4 +8,15 @@
     text-align: left;
     margin: 0 auto; 
   }
+
+.header {
+    height: 150px;
+    font-family: sans-serif;
+    background-color: #b3b3b3;
+    flex-basis: 100%;
+    overflow-y: auto;
+    align-items: center;
+    justify-content: center;
+    
+  }
   

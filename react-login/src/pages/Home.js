@@ -47,10 +47,13 @@ function Home({ recipes: propRecipes }) {
   return (
     <div className="home-container">
       <div className="mainbox">
-        <div className="top-right">
+        {/* Header */}
+        <div className="header">
           <RecipeSearch onSearch={setSearchQuery} />
         </div>
-        <Logout />
+        <div className="top-right">
+          <Logout />
+        </div>
         <h1>Welcome to the Home Page</h1>
         <p>This is the main content of your home page.</p>
         <button onClick={() => navigate('/add-item')}>Add Recipe</button>
@@ -62,20 +65,29 @@ function Home({ recipes: propRecipes }) {
           <option value="dinner">Dinner</option>
         </select>
         <h2>Recipes</h2>
-        <ul>
+        <div className="recipe-cards">
           {searchQuery
             ? searchResults?.map((recipe) => (
-                <li key={recipe.id}>
-                  <Link to={`/recipe/${recipe.id}`}>{recipe.name}</Link>
-                </li>
+                <div className="card" key={recipe.id} style={{ width: '18rem' }}>
+                  <img className="card-img-top" src={recipe.image} alt={recipe.name} />
+                  <div className="card-body">
+                    <h5 className="card-title">{recipe.name}</h5>
+                    <p className="card-text">{recipe.description}</p>
+                    <Link to={`/recipe/${recipe.id}`} className="btn btn-primary">View Recipe</Link>
+                  </div>
+                </div>
               ))
-            : filteredRecipes?.map(recipe => (
-                <li key={recipe.id}>
-                  <Link to={`/recipe/${recipe.id}`}>{recipe.name}</Link>
-                </li>
-              ))
-          }
-        </ul>
+            : filteredRecipes?.map((recipe) => (
+                <div className="card" key={recipe.id} style={{ width: '18rem' }}>
+                  <img className="card-img-top" src={recipe.image} alt={recipe.name} />
+                  <div className="card-body">
+                    <h5 className="card-title">{recipe.name}</h5>
+                    <p className="card-text">{recipe.description}</p>
+                    <Link to={`/recipe/${recipe.id}`} className="btn btn-primary">View Recipe</Link>
+                  </div>
+                </div>
+              ))}
+        </div>
       </div>
     </div>
   );
