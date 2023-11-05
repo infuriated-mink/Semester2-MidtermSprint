@@ -1,10 +1,7 @@
 .rectangle-whatever {
-  width: 386px;
-  background-color: none;
   display: flex;
-  justify-content: right;
+  justify-content: center;
   margin: right auto;
-  
 }
 
 .searchbar {
@@ -16,5 +13,4 @@
   border-radius: 72px;
   background-color: #ffffff80;
   box-shadow: inset 0px 4px 4px 0px #00000040;
- }
-
+}

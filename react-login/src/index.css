@@ -551,3 +551,19 @@ label {
   justify-content: center;
   flex-direction: column;
 }
+
+.logo-container {}
+
+.slogan {
+  font-size: 2em;
+}
+
+.recipe-card {
+  max-width: 20em;
+}
+
+.recipe-container {
+  background-color: pink;
+  padding: 1em;
+  justify-content: center;
+}

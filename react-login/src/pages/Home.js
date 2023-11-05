@@ -4,7 +4,7 @@ import RecipeSearch from '../components/RecipeSearch';
 import oldRecipes from "../data/recipes.json";
 import Logout from '../components/Logout';
 import '../css/Home.css';
-import { Card, Button, CardGroup } from "react-bootstrap";
+import { Card, Button, CardGroup, Stack } from "react-bootstrap";
 
 function Home({ recipes: propRecipes }) {
   const navigate = useNavigate();
@@ -48,21 +48,16 @@ function Home({ recipes: propRecipes }) {
     <div className="home-container">
       <div className="mainbox">
         {/* Header */}
-        <div className="header">
-          {/* <div className="horizontal-bar"></div> */}
-          <div className="logo-container">
-            <img src="/media/logo.png" alt="logo" />
-          </div>
-          <div className="horizontal-bar"></div>
+        <Stack>
           <RecipeSearch onSearch={setSearchQuery} />
-          <div className="logo"></div>
-          <div className="slogan">Build better recipes, together!</div>
-          <div className="horizontal-bar2"></div>
-          <RecipeSearch onSearch={setSearchQuery} />
-        </div>
+        </Stack>
         <div className="horizontal-bar2"></div>
-        <div className="top-right">
-        </div>
+        <Stack className="logo-container">
+          <div className="flex mx-auto">
+            <img src="/media/logo.png" alt="logo" style={{ width: "400px" }} />
+            <div className="slogan">Build better recipes, together!</div>
+          </div>
+        </Stack>
         <Button onClick={() => navigate('/add-item')}>Add Recipe</Button>
         <h2>Filter by Meal Type:</h2>
         <select value={mealTypeFilter} onChange={handleFilter}>
@@ -72,10 +67,10 @@ function Home({ recipes: propRecipes }) {
           <option value="dinner">Dinner</option>
         </select>
         <h2>Featured Items</h2>
-        <CardGroup>
+        <Stack direction="horizontal" className="recipe-container">
           {searchQuery
             ? searchResults?.map((recipe) => (
-              <Card key={recipe.id}>
+              <Card key={recipe.id} className="p-2 mx-4 recipe-card" border="dark">
                 <Card.Img variant="top" src={`/media/${recipe.image}`} alt={recipe.name} style={{ height: '200px' }} />
                 <Card.Body>
                   <Card.Title>{recipe.name}</Card.Title>
@@ -87,7 +82,7 @@ function Home({ recipes: propRecipes }) {
               </Card>
             ))
             : filteredRecipes?.map((recipe) => (
-              <Card key={recipe.id}>
+              <Card key={recipe.id} className="p-2 mx-4 recipe-card" border="dark">
                 <Card.Img variant="top" src={`/media/${recipe.image}`} alt={recipe.name} style={{ height: '200px' }} />
                 <Card.Body>
                   <Card.Title>{recipe.name}</Card.Title>
@@ -99,9 +94,9 @@ function Home({ recipes: propRecipes }) {
               </Card>
             ))
           }
-        </CardGroup>
+        </Stack>
       </div>
-    </div>
+    </div >
   );
 }
 
