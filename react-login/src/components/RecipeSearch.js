@@ -18,7 +18,7 @@ function RecipeSearch({ onSearch }) {
   return (
     <div className="rectangle-whatever">
       <input
-        className="searchbar"
+        className="searchbar rounded-search-bar"
         type="text"
         placeholder="Looking for something else?"
         value={searchQuery}
@@ -30,3 +30,7 @@ function RecipeSearch({ onSearch }) {
 }
 
 export default RecipeSearch;
+
+
+
+// reference: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Aligning_Items_in_a_Flex_Container
