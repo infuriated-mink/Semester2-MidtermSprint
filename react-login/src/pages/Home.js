@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import RecipeSearch from '../components/RecipeSearch';
-import oldRecipes from "../data/recipes.json";
+import oldRecipes from '../data/recipes.json';
 import Logout from '../components/Logout';
 import '../css/Home.css';
-import { Card, Button, CardGroup } from "react-bootstrap";
+import { Card, Button, CardGroup } from 'react-bootstrap';
 
 function Home({ recipes: propRecipes }) {
   const navigate = useNavigate();
@@ -18,9 +18,9 @@ function Home({ recipes: propRecipes }) {
 
   useEffect(() => {
     if (!location.state?.recipes) {
-      localStorage.setItem("recipes", JSON.stringify(oldRecipes));
+      localStorage.setItem('recipes', JSON.stringify(oldRecipes));
     }
-    setLocalRecipes(JSON.parse(localStorage.getItem("recipes")));
+    setLocalRecipes(JSON.parse(localStorage.getItem('recipes')));
   }, []);
 
   useEffect(() => {
@@ -36,7 +36,9 @@ function Home({ recipes: propRecipes }) {
 
   useEffect(() => {
     setFilteredRecipes(
-      mealTypeFilter === "all" ? localRecipes : localRecipes.filter(recipe => recipe.mealType === mealTypeFilter)
+      mealTypeFilter === 'all'
+        ? localRecipes
+        : localRecipes.filter((recipe) => recipe.mealType === mealTypeFilter)
     );
   }, [mealTypeFilter, localRecipes]);
 
@@ -49,57 +51,70 @@ function Home({ recipes: propRecipes }) {
       <div className="mainbox">
         {/* Header */}
         <div className="header">
-          {/* <div className="horizontal-bar"></div> */}
-          <div className="logo-container">
-            <img src="/media/logo.png" alt="logo" />
-          </div>
           <div className="horizontal-bar"></div>
-          <RecipeSearch onSearch={setSearchQuery} />
           <div className="logo"></div>
           <div className="slogan">Build better recipes, together!</div>
-          <div className="horizontal-bar2"></div>
           <RecipeSearch onSearch={setSearchQuery} />
         </div>
         <div className="horizontal-bar2"></div>
-        <div className="top-right">
+        <h2 className="featured-items-header">Featured Items</h2>
+        <div className="add-recipe-button-container">
+          <Button onClick={() => navigate('/add-item')} className="add-recipe-button">
+            Add Recipe
+          </Button>
         </div>
-        <Button onClick={() => navigate('/add-item')}>Add Recipe</Button>
-        <h2>Filter by Meal Type:</h2>
-        <select value={mealTypeFilter} onChange={handleFilter}>
-          <option value="all">All</option>
-          <option value="breakfast">Breakfast</option>
-          <option value="lunch">Lunch</option>
-          <option value="dinner">Dinner</option>
-        </select>
-        <h2>Featured Items</h2>
         <CardGroup>
           {searchQuery
             ? searchResults?.map((recipe) => (
-              <Card key={recipe.id}>
-                <Card.Img variant="top" src={`/media/${recipe.image}`} alt={recipe.name} style={{ height: '200px' }} />
-                <Card.Body>
-                  <Card.Title>{recipe.name}</Card.Title>
-                  <Card.Text>
-                    {recipe.description}
-                  </Card.Text>
-                  <Link to={`/recipe/${recipe.id}`} className="btn btn-primary">View Recipe</Link>
-                </Card.Body>
-              </Card>
-            ))
+                <Card key={recipe.id} className="recipe-card">
+                  <Card.Img
+                    variant="top"
+                    src={`/media/${recipe.image}`}
+                    alt={recipe.name}
+                    style={{ height: '200px' }}
+                  />
+                  <Card.Body>
+                    <Card.Title>{recipe.name}</Card.Title>
+                    <Card.Text>{recipe.description}</Card.Text>
+                  </Card.Body>
+                  <Link
+                    to={`/recipe/${recipe.id}`}
+                    className="btn btn-primary view-recipe-button"
+                    style={{ backgroundColor: recipe.cardColor, textAlign: 'right', position: 'absolute', bottom: '0' }}
+                  >
+                    View Recipe
+                  </Link>
+                </Card>
+              ))
             : filteredRecipes?.map((recipe) => (
-              <Card key={recipe.id}>
-                <Card.Img variant="top" src={`/media/${recipe.image}`} alt={recipe.name} style={{ height: '200px' }} />
-                <Card.Body>
-                  <Card.Title>{recipe.name}</Card.Title>
-                  <Card.Text>
-                    {recipe.description}
-                  </Card.Text>
-                  <Link to={`/recipe/${recipe.id}`} className="btn btn-primary">View Recipe</Link>
-                </Card.Body>
-              </Card>
-            ))
+                <Card key={recipe.id} className="recipe-card">
+                  <Card.Img
+                    variant="top"
+                    src={`/media/${recipe.image}`}
+                    alt={recipe.name}
+                    style={{ height: '200px' }}
+                  />
+                  <Card.Body>
+                    <Card.Title>{recipe.name}</Card.Title>
+                    <Card.Text>{recipe.description}</Card.Text>
+                  </Card.Body>
+                  <Link
+                    to={`/recipe/${recipe.id}`}
+                    className="btn btn-primary view-recipe-button"
+                    style={{ backgroundColor: recipe.cardColor, textAlign: 'right', position: 'absolute', bottom: '0' }}
+                  >
+                    Read more
+                  </Link>
+                </Card>
+              ))
           }
         </CardGroup>
+        <div className="mission-box">
+        <h4>Our Mission</h4>
+        <hr color/>
+        <p>Our mission at DishHub is to provide a versatile and user-friendly platform for culinary enthusiasts. We aim to offer a modern-day recipe box that empowers users to explore, contribute, and curate their favorite recipes. Our goal is to make cooking more enjoyable and accessible, ensuring that users can easily search for recipes, while also providing them with the tools to add and edit their own culinary creations. We are dedicated to enhancing the cooking experience by offering a seamless, cross-device solution that fosters a community of passionate food lovers. At DishHub, we're committed to simplifying the art of cooking and sharing recipes, making it a delightful journey for all.</p>
+      </div>
+      <div className="horizontal-bar"></div>
       </div>
     </div>
   );

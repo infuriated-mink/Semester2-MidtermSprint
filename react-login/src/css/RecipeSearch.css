@@ -3,12 +3,11 @@
   background-color: none;
   display: flex;
   justify-content: right;
-  margin: right auto;
+  align-self: right;
   
 }
 
 .searchbar {
-  /* position: absolute; */
   left: 595px;
   top: 27px;
   width: 385px;
