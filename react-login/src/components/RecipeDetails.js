@@ -16,8 +16,7 @@ function RecipeDetails() {
       </div>
     );
   }
-
-  // Split ingredients by the new line character and format as a bulleted list
+  
   const formattedIngredients = recipe.ingredients.split('\n').map((ingredient, index) => (
     <li key={index}>{ingredient.trim()}</li>
   ));

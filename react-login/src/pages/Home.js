@@ -13,19 +13,13 @@ function Home({ reciepes }) {
   const [searchResults, setSearchResults] = useState(null);
   const [filteredRecipes, setFilteredRecipes] = useState(null);
 
-  // to set the recipes when the home page is being rendered
-  // if it's rendered from sign-in: by default we must store all the recipes from the JSON to local storage
-  // if coming from any other page, those pages will send recipes are being sent
-  // that is stored in recipes state using "useLocation hook" - check reference video
+
   useEffect(() => {
     !location.state?.recipes && localStorage.setItem("recipes", JSON.stringify(oldRecipes))
     setRecipes(JSON.parse(localStorage.getItem("recipes"))
     )
   }, [])
 
-  // Handle search
-  // 1. if mealType is all - gives result based on all recipes
-  // 2. if mealType is not "all", then we must display results based on filtered recipes
   useEffect(() => {
     if (searchQuery) {
       const filteredResults = filteredRecipes?.filter((recipe) =>
