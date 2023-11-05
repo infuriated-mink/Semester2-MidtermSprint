@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Button } from 'react-bootstrap';
 import '../css/RecipeSearch.css';
 
 function RecipeSearch({ onSearch }) {
@@ -25,6 +26,7 @@ function RecipeSearch({ onSearch }) {
         onChange={(e) => setSearchQuery(e.target.value)}
         onKeyPress={handleKeyPress}
       />
+      <Button onClick={handleSearch} size="lg" variant="success" className="rounded-serach-button">Search</Button>
     </div>
   );
 }
