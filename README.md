@@ -41,7 +41,13 @@ To set up DishHub, follow these steps:
    git clone <repository-url>
    ```
 
-2. Install the necessary dependencies:
+2. Move to correct folder:
+
+   ```bash
+   cd react-login
+   ```
+
+3. Install the necessary dependencies:
 
    ```bash
    npm install
@@ -50,7 +56,7 @@ To set up DishHub, follow these steps:
    npm install react-toastify
    ```
 
-3. Run the application:
+4. Run the application:
 
    ```bash
    npm start
@@ -61,6 +67,8 @@ Now, DishHub should be up and running on your local machine.
 ## Usage
 
 To use DishHub, simply open the application in your web browser. You can start exploring recipes, searching for your favorite dishes, or contributing your own culinary creations.
+
+Please note that for the purpose of this demonstration project, you can check the `data/user.json` file to find example usernames and passwords for signing in.
 
 ## Project Structure
 
