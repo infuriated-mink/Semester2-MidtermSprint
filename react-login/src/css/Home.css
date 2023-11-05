@@ -1,0 +1,11 @@
+.mainbox {
+    width: 1200px;
+    height: flex;
+    background-color: white;
+    padding: 15px;
+    border: 3px solid gray;
+    margin: 20px;
+    text-align: left;
+    margin: 0 auto; 
+  }
+  

@@ -1,0 +1,9 @@
+.searchbar {
+  /* position: absolute; */
+  left: 595px;
+  top: 27px;
+  width: 385px;
+  height: 63px;
+  border-radius: 72px;
+  background-color: #ffffff80;
+  box-shadow: inset 0px 4px 4px 0px #00000040;}
