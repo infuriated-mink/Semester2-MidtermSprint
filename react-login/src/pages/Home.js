@@ -3,10 +3,10 @@ import { Link, useNavigate, useLocation } from 'react-router-dom';
 import RecipeSearch from '../components/RecipeSearch';
 import oldRecipes from "../data/recipes.json"
 import Logout from '../components/Logout';
+
 function Home({ reciepes }) {
   const navigate = useNavigate();
   const location = useLocation();
-
   const [recipes, setRecipes] = useState(location.state?.recipes);
   const [mealTypeFilter, setMealTypeFilter] = useState('all');
   const [searchQuery, setSearchQuery] = useState('');

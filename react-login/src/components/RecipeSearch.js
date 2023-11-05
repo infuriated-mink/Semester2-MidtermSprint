@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import '../index.css';
 
 function RecipeSearch({ onSearch }) {
   const [searchQuery, setSearchQuery] = useState('');
@@ -13,7 +14,7 @@ function RecipeSearch({ onSearch }) {
   };
 
   return (
-    <div>
+    <div className = ".rectangle8">
       <input
         type="text"
         placeholder="Search for recipes..."

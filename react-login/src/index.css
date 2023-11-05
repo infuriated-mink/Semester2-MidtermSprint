@@ -86,3 +86,424 @@ add-item-link {
 .add-item-link:hover {
   background-color: #0056b3;
 }
+.root {
+  position: relative;
+  width: 1000px;
+  height: 1245px;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #fff;
+  overflow: hidden;
+}
+.rectangle7 {
+  transform-origin: top left;
+  position: absolute;
+  left: 109.8167%;
+  right: -125.2337%;
+  top: 19.4046%;
+  bottom: 61.4175%;
+  outline: solid 1px #000;
+  background-color: #c0c0c033;
+  background-image:/* webpackIgnore: true */ url('assets/rectangle7.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur(6px);
+  transform: matrix(-1, -0.0024, 0.0024, -1, 0, 0);
+}
+.rectangle4 {
+  position: absolute;
+  left: 0;
+  top: 242px;
+  width: 1000px;
+  height: 7px;
+  border-radius: 8px;
+  background-color: #ff6347e5;
+}
+.rectangle2 {
+  position: absolute;
+  left: 10.4%;
+  right: 10.5%;
+  top: 1.0442%;
+  bottom: 98.6345%;
+  background-color: #01696e;
+}
+.buildBetterRecipesTogether {
+  color: #000;
+  font-size: 24px;
+  font-family: Gentium Book Basic, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: -5.6%;
+  right: 52.0535%;
+  top: 3.6145%;
+  bottom: 93.8134%;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.rectangle6 {
+  position: absolute;
+  left: 410px;
+  top: -13px;
+  width: 180px;
+  height: 162px;
+  background-image:/* webpackIgnore: true */ url('assets/rectangle6.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.rectangle8 {
+  position: absolute;
+  left: 595px;
+  top: 27px;
+  width: 385px;
+  height: 63px;
+  border-radius: 72px;
+  background-color: #ffffff80;
+  box-shadow: inset 0px 4px 4px 0px #00000040;
+}
+.lookingForSomething {
+  color: #727272;
+  font-size: 24px;
+  font-style: italic;
+  font-family: Gentium Book Basic, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 612px;
+  top: 41px;
+  width: 350px;
+  height: 39px;
+  justify-content: center;
+  flex-direction: column;
+}
+.rectangle14 {
+  position: absolute;
+  left: 365px;
+  top: 302px;
+  width: 270px;
+  height: 417px;
+  border-radius: 22px;
+  background-color: #f3f3f3;
+  box-shadow: 0px 4px 4px 0px #00000040;
+}
+.rectangle15 {
+  position: absolute;
+  left: 50px;
+  top: 302px;
+  width: 270px;
+  height: 417px;
+  border-radius: 22px;
+  background-color: #f3f3f3;
+  box-shadow: 0px 4px 4px 0px #00000040;
+}
+.rectangle16 {
+  position: absolute;
+  left: 680px;
+  top: 302px;
+  width: 270px;
+  height: 417px;
+  border-radius: 22px;
+  background-color: #f3f3f3;
+  box-shadow: 0px 4px 4px 0px #00000040;
+}
+.rectangle17 {
+  position: absolute;
+  left: 0;
+  top: 748px;
+  width: 1000px;
+  height: 257px;
+  background-color: #d9d9d9;
+}
+.rectangle18 {
+  position: absolute;
+  left: 0;
+  top: 1005px;
+  width: 1000px;
+  height: 279px;
+  background-color: #a38585;
+}
+.featuredItems {
+  color: #474747c2;
+  font-size: 24px;
+  font-style: italic;
+  font-family: Gentium Book Basic, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 50px;
+  top: 258px;
+  width: 213px;
+  height: 35px;
+  justify-content: center;
+  flex-direction: column;
+}
+.rectangle25 {
+  position: absolute;
+  left: 50px;
+  top: 302px;
+  width: 270px;
+  height: 167px;
+  border-radius: 22px 22px 0 0;
+  background-image:/* webpackIgnore: true */ url('assets/rectangle25.jpeg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur(0px);
+}
+.rectangle26 {
+  position: absolute;
+  left: 365px;
+  top: 302px;
+  width: 270px;
+  height: 167px;
+  border-radius: 22px 22px 0 0;
+  background-image:/* webpackIgnore: true */ url('assets/rectangle26.jpeg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  filter: blur(0px);
+}
+.rectangle27 {
+  position: absolute;
+  left: -32px;
+  top: 998px;
+  width: 1045px;
+  height: 7px;
+  border-radius: 8px;
+  background-color: #ff6347e5;
+}
+.chickenAlfredo {
+  position: absolute;
+  left: 60px;
+  top: 482px;
+  width: 160px;
+  height: 29px;
+  justify-content: center;
+  flex-direction: column;
+}
+.labelWrapper {
+  font-size: 24px;
+  font-family: Gentium Book Basic, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  flex-shrink: 1;
+}
+.label {
+  color: #737373;
+  font-size: 24px;
+  font-style: italic;
+  font-family: Gentium Book Basic, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+}
+.label2 {
+  color: #000;
+  font-size: 24px;
+  font-style: italic;
+  font-family: Gentium Book Basic, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+}
+.addNew {
+  color: #737373bd;
+  font-size: 24px;
+  font-weight: bold;
+  font-style: italic;
+  font-family: Gentium Book Basic, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 734px;
+  top: 612px;
+  width: 160px;
+  height: 29px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.spaghettiCarbonara {
+  color: #737373;
+  font-size: 24px;
+  font-style: italic;
+  font-family: Gentium Book Basic, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 382px;
+  top: 482px;
+  width: 197px;
+  height: 29px;
+  justify-content: center;
+  flex-direction: column;
+}
+.rectangle252 {
+  position: absolute;
+  left: 778.0185px;
+  top: 372px;
+  width: 72.963px;
+  height: 194px;
+  border-radius: 25px;
+  background-color: #f8f8f8;
+}
+.rectangle262 {
+  transform-origin: top left;
+  position: absolute;
+  left: 716px;
+  top: 504.9259px;
+  width: 71.8519px;
+  height: 197px;
+  border-radius: 25px;
+  background-color: #f8f8f8;
+  transform: matrix(0, -1, 1, 0, 0, 0);
+}
+.line1 {
+  position: relative;
+  left: 655px;
+  top: 247px;
+  width: 4.0488px;
+  max-width: 100%;
+  height: 499.008px;
+  max-height: 100%;
+}
+.line1::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: 0 0;
+  transform: rotate(89.7648deg);
+  width: 499.004px;
+  height: 0;
+  outline: solid 1px #e7e4e4;
+  outline-style: dashed;
+}
+.spaghettiCarbonaraIsAClassicRo {
+  color: #737373;
+  font-size: 20px;
+  font-style: italic;
+  font-family: Gentium Book Basic, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 60px;
+  top: 521px;
+  width: 248px;
+  height: 113px;
+  justify-content: center;
+  flex-direction: column;
+}
+.chickenAlfredoIsACreamyItalian {
+  color: #737373;
+  font-size: 20px;
+  font-style: italic;
+  font-family: Gentium Book Basic, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 377px;
+  top: 526px;
+  width: 248px;
+  height: 113px;
+  justify-content: center;
+  flex-direction: column;
+}
+.readMore {
+  color: #7b7b7b;
+  font-size: 20px;
+  font-style: italic;
+  font-family: Gentium Book Basic, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 168px;
+  top: 661px;
+  width: 140px;
+  height: 36px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.readMore2 {
+  color: #7b7b7b;
+  font-size: 20px;
+  font-style: italic;
+  font-family: Gentium Book Basic, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 481px;
+  top: 661px;
+  width: 140px;
+  height: 36px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.ourMission {
+  color: #4e4e4e;
+  font-size: 24px;
+  font-style: italic;
+  font-family: Gentium Book Basic, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: -32px;
+  top: 759px;
+  width: 273px;
+  height: 49px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.whereToFindUs {
+  color: #fff;
+  font-size: 24px;
+  font-style: italic;
+  font-family: Gentium Book Basic, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 397px;
+  top: 1012px;
+  width: 208px;
+  height: 55px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.ourMissionAtDishHubIsToProvide {
+  color: #4e4e4e;
+  font-size: 20px;
+  font-style: italic;
+  font-family: Gentium Book Basic, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 45px;
+  top: 808px;
+  width: 911px;
+  height: 153px;
+  justify-content: center;
+  flex-direction: column;
+}
+.line2 {
+  position: absolute;
+  left: 46px;
+  top: 800px;
+  width: 910.0005px;
+  max-width: 100%;
+  height: 0;
+  max-height: 100%;
+  border-bottom: solid 1px #000;
+  background-color: #d9d9d9;
+}
+.DishHub {
+  color: #fff;
+  font-size: 24px;
+  font-style: italic;
+  font-family: Gentium Book Basic, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 402px;
+  top: 1118px;
+  width: 203px;
+  height: 51px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
