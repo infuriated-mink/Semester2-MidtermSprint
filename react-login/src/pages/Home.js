@@ -53,7 +53,6 @@ function Home() {
     <div className="home-container">
       <div className="top-right">
         <RecipeSearch onSearch={setSearchQuery} />
-
       </div>
 
       <h1>Welcome to the Home Page</h1>
@@ -74,12 +73,12 @@ function Home() {
         {searchQuery
           ? searchResults?.map((recipe) => (
             <li key={recipe.id}>
-              <Link to={`/recipe/${recipe.id}`}>{recipe.name}</Link>
+              <Link className="add-item-link" to={`/recipe/${recipe.id}`}>{recipe.name}</Link>
             </li>
           ))
           : filteredRecipes?.map(recipe => (
             <li key={recipe.id}>
-              <Link to={`/recipe/${recipe.id}`}>{recipe.name}</Link>
+              <Link className="add-item-link" to={`/recipe/${recipe.id}`}>{recipe.name}</Link>
             </li>
           ))
         }

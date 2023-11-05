@@ -51,10 +51,10 @@ label {
   font-weight: 600;
   color: rgb(34, 34, 34);
 }
+
 .rounded-search-bar {
   border-radius: 25px;
   padding: 10px;
-  width: 200px;
 }
 
 .rounded-search-button {
@@ -68,11 +68,11 @@ label {
 
 .top-right {
   position: absolute;
-  top: 10px; 
-  right: 10px; 
+  top: 10px;
+  right: 10px;
 }
 
-add-item-link {
+.add-item-link {
   display: inline-block;
   background-color: #007bff;
   color: white;
@@ -84,5 +84,10 @@ add-item-link {
 }
 
 .add-item-link:hover {
-  background-color: #0056b3;
+  background-color: green;
+}
+
+
+.rectangle-whatever {
+  background-color: red;
 }

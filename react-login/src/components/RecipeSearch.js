@@ -13,17 +13,18 @@ function RecipeSearch({ onSearch }) {
   };
 
   return (
-    <div>
+    <div className="rectangle-whatever">
       <input
+        className="rounded-search-bar"
         type="text"
         placeholder="Search for recipes..."
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
       />
-      <button onClick={handleSearch}>Search</button>
+      <button className="rounded-search-button" onClick={handleSearch}>Search</button>
       {
         searchQuery && (
-          <button onClick={handleClearSearch}>Clear</button>
+          <button className="rounded-search-button" onClick={handleClearSearch}>Clear</button>
         )}
     </div>
   );
