@@ -4,8 +4,7 @@ import RecipeSearch from '../components/RecipeSearch';
 import oldRecipes from "../data/recipes.json";
 import Logout from '../components/Logout';
 import '../css/Home.css';
-import { Button, Card } from "react-bootstrap";
-
+import { Card } from "react-bootstrap";
 
 function Home({ recipes: propRecipes }) {
   const navigate = useNavigate();
@@ -35,7 +34,6 @@ function Home({ recipes: propRecipes }) {
     }
   }, [searchQuery, localRecipes]);
 
-  // filter based on mealType
   useEffect(() => {
     setFilteredRecipes(
       mealTypeFilter === "all" ? localRecipes : localRecipes.filter(recipe => recipe.mealType === mealTypeFilter)
@@ -51,14 +49,14 @@ function Home({ recipes: propRecipes }) {
       <div className="mainbox">
         {/* Header */}
         <div className="header">
+          <div className="horizontal-bar"></div>
+          <div className="logo"></div>
+          <div className="slogan">Build better recipes, together!</div>
+          <div className="horizontal-bar2"></div>
           <RecipeSearch onSearch={setSearchQuery} />
         </div>
         <div className="top-right">
-          <Logout />
         </div>
-        <h1>Welcome to the Home Page</h1>
-        <p>This is the main content of your home page.</p>
-        <button onClick={() => navigate('/add-item')}>Add Recipe</button>
         <h2>Filter by Meal Type:</h2>
         <select value={mealTypeFilter} onChange={handleFilter}>
           <option value="all">All</option>
@@ -70,7 +68,6 @@ function Home({ recipes: propRecipes }) {
         <div className="recipe-cards">
           {searchQuery
             ? searchResults?.map((recipe) => (
-
               <Card key={recipe.id} style={{ width: '18rem' }}>
                 <Card.Img variant="top" src={`/media/${recipe.image}`} alt={recipe.name} />
                 <Card.Body>
@@ -83,7 +80,6 @@ function Home({ recipes: propRecipes }) {
               </Card>
             ))
             : filteredRecipes?.map((recipe) => (
-
               <Card key={recipe.id} style={{ width: '18rem' }}>
                 <Card.Img variant="top" src={`/media/${recipe.image}`} alt={recipe.name} />
                 <Card.Body>
@@ -102,8 +98,3 @@ function Home({ recipes: propRecipes }) {
 }
 
 export default Home;
-
-
-
-// source: static images in public folder: https://stackoverflow.com/questions/65376684/accessing-images-from-public-folder-reactjs
-// source: react-boostrap card: https://react-bootstrap.netlify.app/docs/components/cards/

@@ -87,14 +87,6 @@ label {
   background-color: green;
 }
 
-
-.rectangle-whatever {
-  background-color: red;
-  display: flex;
-  justify-content: center;
-  /* use right here */
-}
-
 .root {
   position: relative;
   width: 1000px;

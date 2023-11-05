@@ -1,3 +1,10 @@
+.rectangle-whatever {
+  background-color: none;
+  display: flex;
+  justify-content: right;
+  margin: 10px;
+}
+
 .searchbar {
   /* position: absolute; */
   left: 595px;
