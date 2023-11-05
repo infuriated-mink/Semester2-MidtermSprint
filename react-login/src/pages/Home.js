@@ -49,10 +49,12 @@ function Home({ recipes: propRecipes }) {
       <div className="mainbox">
         {/* Header */}
         <div className="header">
-          <div className="horizontal-bar"></div>
-          <div className="logo"></div>
+          {/* <div className="horizontal-bar"></div> */}
+          <div className="logo-container">
+            <img src="/media/logo.png" alt="logo" />
+          </div>
           <div className="slogan">Build better recipes, together!</div>
-          <div className="horizontal-bar2"></div>
+          {/* <div className="horizontal-bar2"></div> */}
           <RecipeSearch onSearch={setSearchQuery} />
         </div>
         <div className="top-right">
