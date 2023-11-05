@@ -11,7 +11,7 @@
 
 .header {
     padding: 0px;
-    height: 200px;
+    height: flex;
     font-family: sans-serif;
     background-color: #b3b3b3;
     flex-basis: 100%;
@@ -29,7 +29,7 @@
   }
   
 .slogan {
-    position: absolute;
+    /* position: absolute; */
     left: 12.32%;
     right: 49.47%;
     top: 15.02%;
@@ -47,7 +47,7 @@
   }
 
 .logo {
-    position: absolute;
+    /* position: absolute; */
     width: 183px;
     height: 150px;
     left: 648px;
@@ -56,11 +56,101 @@
   }
 
 .horizontal-bar2 {
-    position: absolute;
-    width: 1018px;
+    /* position: absolute; */
+    width: 1150px;
     height: 7px;
     left: 229px;
     top: 308px;
     background: rgba(255, 99, 71, 0.9);
+    margin: 0 auto;
     border-radius: 8px;
+    margin-bottom: 10px;
   }
+
+.recipe-cards {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-between; 
+  }
+.card {
+    background: #F3F3F3;
+    width: calc(33.3333% - 10px); 
+    margin-right: 10px; 
+    margin-bottom: 20px; 
+  }
+
+  .addNewCard {
+    position: absolute;
+    width: 270px;
+    height: 417px;
+    left: 680px;
+    top: 302px;
+  }
+  
+  .rectangle16 {
+    position: absolute;
+    width: 270px;
+    height: 417px;
+    background: #F3F3F3;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 22px;
+  }
+  
+.addNewText {
+    position: absolute;
+    width: 160px;
+    height: 29px;
+    left: 734px;
+    top: 612px;
+    font-family: 'Gentium Book Basic';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: rgba(115, 115, 115, 0.74);
+  }
+  
+.group4 {
+    position: absolute;
+    width: 197px;
+    height: 194px;
+    left: 716px;
+    top: 372px;
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+  
+.rectangle25 {
+    position: absolute;
+    width: 72.96px;
+    height: 194px;
+    left: 778.02px;
+    top: 372px;
+    background: #F8F8F8;
+    border-radius: 25px;
+  }
+  
+.rectangle26 {
+    position: absolute;
+    width: 71.85px;
+    height: 197px;
+    left: 716px;
+    top: 504.93px;
+    background: #F8F8F8;
+    border-radius: 25px;
+    transform: rotate(-90deg);
+  }
+
+.recipe-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border-radius: 4;
+  }
+  
+.view-recipe-button {
+    margin-top: auto;
+  }
+  
