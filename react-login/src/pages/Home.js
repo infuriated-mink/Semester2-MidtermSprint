@@ -5,6 +5,8 @@ import oldRecipes from '../data/recipes.json';
 import Logout from '../components/Logout';
 import '../css/Home.css';
 import { Card, Button, CardGroup } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTwitter, faFacebook, faInstagram } from '@fortawesome/free-brands-svg-icons';
 
 function Home({ recipes: propRecipes }) {
   const navigate = useNavigate();
@@ -49,7 +51,6 @@ function Home({ recipes: propRecipes }) {
   return (
     <div className="home-container">
       <div className="mainbox">
-        {/* Header */}
         <div className="header">
           <div className="horizontal-bar"></div>
           <div className="logo"></div>
@@ -110,11 +111,26 @@ function Home({ recipes: propRecipes }) {
           }
         </CardGroup>
         <div className="mission-box">
-        <h4>Our Mission</h4>
-        <hr color/>
-        <p>Our mission at DishHub is to provide a versatile and user-friendly platform for culinary enthusiasts. We aim to offer a modern-day recipe box that empowers users to explore, contribute, and curate their favorite recipes. Our goal is to make cooking more enjoyable and accessible, ensuring that users can easily search for recipes, while also providing them with the tools to add and edit their own culinary creations. We are dedicated to enhancing the cooking experience by offering a seamless, cross-device solution that fosters a community of passionate food lovers. At DishHub, we're committed to simplifying the art of cooking and sharing recipes, making it a delightful journey for all.</p>
+          <h4>Our Mission</h4>
+          <hr />
+          <p>Our mission at DishHub is to provide a versatile and user-friendly platform for culinary enthusiasts. We aim to offer a modern-day recipe box that empowers users to explore, contribute, and curate their favorite recipes. Our goal is to make cooking more enjoyable and accessible, ensuring that users can easily search for recipes, while also providing them with the tools to add and edit their own culinary creations. We are dedicated to enhancing the cooking experience by offering a seamless, cross-device solution that fosters a community of passionate food lovers. At DishHub, we're committed to simplifying the art of cooking and sharing recipes, making it a delightful journey for all.</p>
+        </div>
+        <div className="horizontal-bar3"></div>
+        <div className='footer'>
+        <p>Where to find us!</p>
+        <div className="social-icons">
+          <a href="https://www.twitter.com" className="social-icon" style={{ color: 'black' }}>
+            <FontAwesomeIcon icon={faTwitter} size='3x' />
+          </a>
+          <a href="https://www.facebook.com" className="social-icon" style={{ color: 'black' }}>
+            <FontAwesomeIcon icon={faFacebook} size='3x'/>
+          </a>
+          <a href="https://www.instagram.com" className="social-icon" style={{ color: 'black' }}>
+            <FontAwesomeIcon icon={faInstagram} size='3x'/>
+          </a>
+        </div>
+        <p>@DishHub</p>
       </div>
-      <div className="horizontal-bar"></div>
       </div>
     </div>
   );
