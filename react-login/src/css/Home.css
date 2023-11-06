@@ -1,187 +1,187 @@
 .home-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .mainbox {
-    width: 1200px;
-    background-color: white;
-    padding: 15px;
-    border: 3px solid white;
-    margin: 20px;
-    text-align: left;
-    margin: 0 auto;
-    height: flex;
-  }
-  
-  .header {
-    padding: 0px;
-    height: flex;
-    width: 1164px;
-    font-family: sans-serif;
-    background-color: #b3b3b3;
-    flex-basis: 100%;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .horizontal-bar {
-    background-color: #01696E;
-    height: 4px;
-    width: 804px;
-    margin: 0 auto;
-    margin-bottom: 10px;
-  }
-  
-  .logo {
-    position: absolute;
-    width: 183px;
-    height: 162px;
-    left: 50%;
-    transform: translateX(-50%);
-    top: 59px;
-    background: url(/public/media/logo.png);
-  }
-  
-  .slogan {
-    font-family: 'Gentium Book Basic';
-    font-style: italic;
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 28px;
-    color: rgba(115, 115, 115, 0.74);
-    text-align: center;
-  }
-  
-  .horizontal-bar2 {
-    width: 1164px;
-    height: 7px;
-    background: rgba(255, 99, 71, 0.9);
-    border-radius: 8px;
-    margin: 0 auto;
-    margin-bottom: 10px;
-  }
-  
-  .card-group {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-  
-  .recipe-card {
-    width: 23%;
-    margin-bottom: 20px;
-    margin-right: 5px;
-    border-radius: 10px;
-    background-color: #F3F3F3;
-  }
-  
-  .recipe-card .card-img-top {
-    height: 200px;
-  }
-  
-  .view-recipe-button {
-    background-color: inherit;
-    color: inherit;
-    width: 100%;
-    text-align: right;
-  }
-  
-  .btn.btn-primary {
-    border: none;
-    background-color: #F3F3F3;
-    color: black;
-  }
-  
-  .btn.btn-primary:hover {
-    background-color: #A38585;
-    color: black;
-    border: none;
-  }
-  
-  .add-recipe-button {
-    background-color: #F3F3F3;
-    color: black;
-    margin-bottom: 10px;
-  }
-  
-  .grid-container {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
-  }
-  
-  .recipe-card {
-    width: 100%;
-    border-radius: 10px;
-    height: 450px;
-  }
-  
-  .mission-box {
-    margin-top: 10px;
-    padding: 15px;
-    height: flex;
-    width: 1164px;
-    font-family: sans-serif;
-    background-color: #b3b3b3;
-    font-style: italic; /* Make it italic */
-    flex-basis: 100%;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: left;
-    justify-content: center;
-  }
-  p,h1,h2,h3,h4,h5,h6 {
-    font-family: 'Gentium Book Basic';
-    font-size: italic;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-  }
-  .horizontal-bar3 {
-    width: 1164px;
-    height: 7px;
-    background: rgba(255, 99, 71, 0.9);
-    border-radius: 8px;
-    margin: 0 auto;
-    margin-bottom: 0px;
-  }
-  
-  .footer {
-    margin-top: 0px;
-    padding: 15px;
-    height: flex;
-    width: 1164px;
-    font-family: sans-serif;
-    background-color: #A38585;
-    color: white;
-    flex-basis: 100%;
-    overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-style: italic;
-  }
-  
-      .social-icons {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 10px;
-      }
-      .logo-center {
-        margin-top: 0px;
-        text-align: center;
-        align-items: center;
-        justify-content: center;
-      }
-      
-      .search-right {
-        text-align: center;
-        align-items: right;
-        justify-content: right;
-        margin-bottom: 10px;
-      }
+.mainbox {
+  width: 1200px;
+  background-color: white;
+  padding: 15px;
+  border: 3px solid white;
+  margin: 20px auto; 
+  text-align: left;
+  height: auto; 
+}
+
+.header {
+  padding: 0;
+  width: 1164px;
+  font-family: sans-serif;
+  background-color: #b3b3b3;
+  flex-basis: 100%;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.horizontal-bar {
+  background-color: #01696E;
+  height: 4px;
+  width: 804px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+.logo {
+  position: absolute;
+  width: 183px;
+  height: 162px;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 59px;
+  background: url(/public/media/logo.png);
+}
+
+.slogan {
+  font-family: 'Gentium Book Basic';
+  font-style: italic;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+  color: rgba(115, 115, 115, 0.74);
+  text-align: center;
+}
+
+.horizontal-bar2 {
+  width: 1164px;
+  height: 7px;
+  background: rgba(255, 99, 71, 0.9);
+  border-radius: 8px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+.card-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.recipe-card {
+  width: 23%;
+  margin-bottom: 20px;
+  margin-right: 5px;
+  border-radius: 10px;
+  background-color: #F3F3F3;
+}
+
+.recipe-card .card-img-top {
+  height: 200px;
+}
+
+.view-recipe-button {
+  background-color: inherit;
+  color: inherit;
+  width: 100%;
+  text-align: right;
+}
+
+.btn.btn-primary {
+  border: none;
+  background-color: #F3F3F3;
+  color: black;
+}
+
+.btn.btn-primary:hover {
+  background-color: #A38585;
+  color: black;
+  border: none;
+}
+
+.add-recipe-button {
+  background-color: #F3F3F3;
+  color: black;
+  margin-bottom: 10px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.recipe-card {
+  width: 100%;
+  border-radius: 10px;
+  height: 450px;
+}
+
+.mission-box {
+  margin-top: 10px;
+  padding: 15px;
+  height: auto; 
+  width: 1164px;
+  font-family: sans-serif;
+  background-color: #b3b3b3;
+  font-style: italic;
+  flex-basis: 100%;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: left; 
+  justify-content: center;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  font-family: 'Gentium Book Basic';
+  font-size: italic;
+}
+
+.horizontal-bar3 {
+  width: 1164px;
+  height: 7px;
+  background: rgba(255, 99, 71, 0.9);
+  border-radius: 8px;
+  margin: 0 auto;
+  margin-bottom: 0;
+}
+
+.footer {
+  margin-top: 0;
+  padding: 15px;
+  height: auto; 
+  width: 1164px;
+  font-family: sans-serif;
+  background-color: #A38585;
+  color: white;
+  flex-basis: 100%;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-style: italic;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.logo-center {
+  margin-top: 0;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-right {
+  text-align: center;
+  align-items: flex-end; 
+  justify-content: flex-end; 
+  margin-bottom: 10px;
+}
