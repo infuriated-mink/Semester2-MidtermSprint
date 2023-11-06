@@ -1,0 +1,105 @@
+.mainbox {
+padding: 0;
+width: 1019px;
+height: 679px;
+left: 228px;
+top: 58px;
+background: rgba(139, 69, 19, 0.15);
+box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+border-radius: 35px;
+}
+
+.header {
+    padding: 0px;
+    height: flex;
+    width: 1014px;
+    font-family: sans-serif;
+    background: rgba(139, 69, 19, 0.15);
+    flex-basis: 100%;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-top-left-radius:  35px;
+    border-top-right-radius: 35px;
+  }
+
+  .horizontal-bar {
+    background-color: #01696E;
+    height: 4px;
+    width: 804px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }     
+  
+  .logo {
+    position: absolute;
+    width: 183px;
+    height: 162px;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 59px;
+    background: url(/public/media/logo.png);
+  }
+  
+  .slogan {
+    font-family: 'Gentium Book Basic';
+    font-style: italic;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    color: rgba(115, 115, 115, 0.74);
+    text-align: center;
+  }
+  .horizontal-bar2 {
+    width: 1014px;
+    height: 7px;
+    background: rgba(255, 99, 71, 0.9);
+    border-radius: 8px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
+
+  .Auth-form-container {
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    margin: 0 auto;
+    width: 420px;
+    height: flex;
+    margin-top: 100px;
+
+  }
+  
+  .Auth-form {
+    width: 420px;
+    box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    border-radius: 8px;
+    background: rgba(139, 69, 19, 0.15);
+    margin: 0 auto;
+    margin-bottom: 50px;
+  }
+  
+  .Auth-form-content {
+    padding-left: 12%;
+    padding-right: 12%;
+  }
+  
+  .Auth-form-title {
+    text-align: center;
+    margin-bottom: 1em;
+    font-size: 24px;
+    color: rgb(34, 34, 34);
+    font-weight: 800;
+  }
+
+  .Auth-form-container .Auth-form .btn-primary {
+    background-color: #01696E;
+    color: #fff;
+    margin: 0;
+  }
+  

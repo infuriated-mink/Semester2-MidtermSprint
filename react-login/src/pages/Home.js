@@ -53,9 +53,15 @@ function Home({ recipes: propRecipes }) {
       <div className="mainbox">
         <div className="header">
           <div className="horizontal-bar"></div>
-          <div className="logo"></div>
+          <div className="logo-center">
+          <div className="flex mx-auto">
+          <img src="/media/logo.png" alt="logo" style={{ width: "150px" }} />
           <div className="slogan">Build better recipes, together!</div>
-          <RecipeSearch onSearch={setSearchQuery} />
+        </div>
+          </div>
+          <div className="search-right">
+        <RecipeSearch onSearch={setSearchQuery} />
+        </div>
         </div>
         <div className="horizontal-bar2"></div>
         <h2 className="featured-items-header">Featured Items</h2>
@@ -130,6 +136,7 @@ function Home({ recipes: propRecipes }) {
           </a>
         </div>
         <p>@DishHub</p>
+        <Logout/>
       </div>
       </div>
     </div>

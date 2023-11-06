@@ -172,3 +172,16 @@
         justify-content: center;
         margin-bottom: 10px;
       }
+      .logo-center {
+        margin-top: 0px;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+      }
+      
+      .search-right {
+        text-align: center;
+        align-items: right;
+        justify-content: right;
+        margin-bottom: 10px;
+      }

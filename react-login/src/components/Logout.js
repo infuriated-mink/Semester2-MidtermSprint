@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import '../css/Home.css';
 
 function BackToAuthButton() {
   const navigate = useNavigate();
@@ -9,8 +10,8 @@ function BackToAuthButton() {
   };
 
   return (
-    <button onClick={handleBackToAuth} className="logout-button">
-      Back to Auth
+    <button onClick={handleBackToAuth} className="add-recipe-button">
+      Logout
     </button>
   );
 }
