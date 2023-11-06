@@ -17,7 +17,7 @@ function RecipeDetails() {
       </div>
     );
   }
-  
+
   const formattedIngredients = recipe.ingredients.split('\n').map((ingredient, index) => (
     <li key={index}>{ingredient.trim()}</li>
   ));
@@ -31,6 +31,7 @@ function RecipeDetails() {
   };
 
   return (
+<<<<<<< HEAD
     <div><div className="mainbox2">
       <div className="header">
       <img src={`/media/${recipe.image}`} alt={recipe.name} style= {{maxWidth: '1000px',
@@ -45,6 +46,22 @@ function RecipeDetails() {
      <ul>
       {formattedIngredients}
     </ul>
+=======
+    <div>
+      <h2>{recipe.name}</h2>
+      <p>Description: {recipe.description}</p>
+      <p>Meal Type: {recipe.mealType}</p>
+      <h3>Ingredients:</h3>
+      <ul>
+        {formattedIngredients}
+      </ul>
+      <h3>Instructions:</h3>
+      <ol>
+        {formatInstructions(recipe.instructions)}
+      </ol>
+      <img src={`/media/${recipe.image}`} alt={recipe.name} style={{ maxWidth: '300px' }} />
+      <button onClick={() => navigate('/home', { state: { recipes: storedRecipes } })}>Back to Home</button>
+>>>>>>> 904f5b49bb05d1503153f2cdeb96dd5e623c9fe5
     </div>
     <div className="instructionsCard"><h3>Instructions:</h3>
     <ol>

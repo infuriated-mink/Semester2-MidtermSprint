@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Button } from 'react-bootstrap';
 import '../css/RecipeSearch.css';
 
 function RecipeSearch({ onSearch }) {
@@ -6,7 +7,7 @@ function RecipeSearch({ onSearch }) {
 
   const handleSearch = () => {
     onSearch(searchQuery);
-    setSearchQuery(''); 
+    setSearchQuery('');
   };
 
   const handleKeyPress = (e) => {
@@ -16,17 +17,22 @@ function RecipeSearch({ onSearch }) {
   };
 
   return (
-    <div>
+    <div className="rectangle-whatever">
       <input
-        className="searchbar"
+        className="searchbar rounded-search-bar"
         type="text"
         placeholder="Looking for something else?"
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
         onKeyPress={handleKeyPress}
       />
+      <Button onClick={handleSearch} size="lg" variant="success" className="rounded-serach-button">Search</Button>
     </div>
   );
 }
 
 export default RecipeSearch;
+
+
+
+// reference: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Aligning_Items_in_a_Flex_Container

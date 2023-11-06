@@ -4,6 +4,7 @@ import RecipeSearch from '../components/RecipeSearch';
 import oldRecipes from "../data/recipes.json";
 import Logout from '../components/Logout';
 import '../css/Home.css';
+import { Card, Button, CardGroup, Stack } from "react-bootstrap";
 
 function Home({ recipes: propRecipes }) {
   const navigate = useNavigate();
@@ -33,7 +34,6 @@ function Home({ recipes: propRecipes }) {
     }
   }, [searchQuery, localRecipes]);
 
-  // filter based on mealType
   useEffect(() => {
     setFilteredRecipes(
       mealTypeFilter === "all" ? localRecipes : localRecipes.filter(recipe => recipe.mealType === mealTypeFilter)
@@ -48,15 +48,17 @@ function Home({ recipes: propRecipes }) {
     <div className="home-container">
       <div className="mainbox">
         {/* Header */}
-        <div className="header">
+        <Stack>
           <RecipeSearch onSearch={setSearchQuery} />
-        </div>
-        <div className="top-right">
-          <Logout />
-        </div>
-        <h1>Welcome to the Home Page</h1>
-        <p>This is the main content of your home page.</p>
-        <button onClick={() => navigate('/add-item')}>Add Recipe</button>
+        </Stack>
+        <div className="horizontal-bar2"></div>
+        <Stack className="logo-container">
+          <div className="flex mx-auto">
+            <img src="/media/logo.png" alt="logo" style={{ width: "400px" }} />
+            <div className="slogan">Build better recipes, together!</div>
+          </div>
+        </Stack>
+        <Button onClick={() => navigate('/add-item')}>Add Recipe</Button>
         <h2>Filter by Meal Type:</h2>
         <select value={mealTypeFilter} onChange={handleFilter}>
           <option value="all">All</option>
@@ -64,32 +66,37 @@ function Home({ recipes: propRecipes }) {
           <option value="lunch">Lunch</option>
           <option value="dinner">Dinner</option>
         </select>
-        <h2>Recipes</h2>
-        <div className="recipe-cards">
+        <h2>Featured Items</h2>
+        <Stack direction="horizontal" className="recipe-container">
           {searchQuery
             ? searchResults?.map((recipe) => (
-                <div className="card" key={recipe.id} style={{ width: '18rem' }}>
-                  <img className="card-img-top" src={recipe.image} alt={recipe.name} />
-                  <div className="card-body">
-                    <h5 className="card-title">{recipe.name}</h5>
-                    <p className="card-text">{recipe.description}</p>
-                    <Link to={`/recipe/${recipe.id}`} className="btn btn-primary">View Recipe</Link>
-                  </div>
-                </div>
-              ))
+              <Card key={recipe.id} className="p-2 mx-4 recipe-card" border="dark">
+                <Card.Img variant="top" src={`/media/${recipe.image}`} alt={recipe.name} style={{ height: '200px' }} />
+                <Card.Body>
+                  <Card.Title>{recipe.name}</Card.Title>
+                  <Card.Text>
+                    {recipe.description}
+                  </Card.Text>
+                  <Link to={`/recipe/${recipe.id}`} className="btn btn-primary">View Recipe</Link>
+                </Card.Body>
+              </Card>
+            ))
             : filteredRecipes?.map((recipe) => (
-                <div className="card" key={recipe.id} style={{ width: '18rem' }}>
-                  <img className="card-img-top" src={recipe.image} alt={recipe.name} />
-                  <div className="card-body">
-                    <h5 className="card-title">{recipe.name}</h5>
-                    <p className="card-text">{recipe.description}</p>
-                    <Link to={`/recipe/${recipe.id}`} className="btn btn-primary">View Recipe</Link>
-                  </div>
-                </div>
-              ))}
-        </div>
+              <Card key={recipe.id} className="p-2 mx-4 recipe-card" border="dark">
+                <Card.Img variant="top" src={`/media/${recipe.image}`} alt={recipe.name} style={{ height: '200px' }} />
+                <Card.Body>
+                  <Card.Title>{recipe.name}</Card.Title>
+                  <Card.Text>
+                    {recipe.description}
+                  </Card.Text>
+                  <Link to={`/recipe/${recipe.id}`} className="btn btn-primary">View Recipe</Link>
+                </Card.Body>
+              </Card>
+            ))
+          }
+        </Stack>
       </div>
-    </div>
+    </div >
   );
 }
 
