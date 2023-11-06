@@ -1,32 +1,36 @@
 import React, { useState } from 'react';
+import '../css/RecipeSearch.css';
 
 function RecipeSearch({ onSearch }) {
   const [searchQuery, setSearchQuery] = useState('');
 
   const handleSearch = () => {
     onSearch(searchQuery);
+    setSearchQuery('');
   };
 
-  const handleClearSearch = () => {
-    setSearchQuery('');
-    onSearch('');
+  const handleKeyPress = (e) => {
+    if (e.key === 'Enter') {
+      handleSearch();
+    }
   };
 
   return (
-    <div>
+    <div className="rectangle-whatever">
       <input
+        className="searchbar rounded-search-bar"
         type="text"
-        placeholder="Search for recipes..."
+        placeholder="Looking for something else?"
         value={searchQuery}
         onChange={(e) => setSearchQuery(e.target.value)}
+        onKeyPress={handleKeyPress}
       />
-      <button onClick={handleSearch}>Search</button>
-      {
-        searchQuery && (
-          <button onClick={handleClearSearch}>Clear</button>
-        )}
     </div>
   );
 }
 
 export default RecipeSearch;
+
+
+
+// reference: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Aligning_Items_in_a_Flex_Container
