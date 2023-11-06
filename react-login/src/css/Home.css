@@ -18,7 +18,7 @@
   padding: 0;
   width: 1164px;
   font-family: sans-serif;
-  background-color: #b3b3b3;
+  background-color: rgba(139, 69, 19, 0.15);
   flex-basis: 100%;
   overflow-y: auto;
   display: flex;
@@ -136,8 +136,7 @@
 }
 
 p, h1, h2, h3, h4, h5, h6 {
-  font-family: 'Gentium Book Basic';
-  font-size: 16px; 
+  font-family: 'Gentium Book Basic'; 
 }
 
 .horizontal-bar3 {
@@ -152,7 +151,7 @@ p, h1, h2, h3, h4, h5, h6 {
 .footer {
   margin-top: 0;
   padding: 15px;
-  height: auto; /* Changed 'flex' to 'auto' */
+  height: auto; 
   width: 1164px;
   font-family: sans-serif;
   background-color: #A38585;
