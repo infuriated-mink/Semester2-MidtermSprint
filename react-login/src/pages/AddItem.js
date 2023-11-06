@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import '../css/recipe.css'
 function AddItem() {
   const navigate = useNavigate();
 
@@ -76,34 +76,34 @@ function AddItem() {
 
 
   return (
-    <div>
-      <h1>Add a New Recipe</h1>
+    <div><div className="mainbox2">
+      <div className="addPhotoBox"><div>
+          <div className='btn.btn-primary'>Photo (Local File):</div>
+          <input
+            type="file"
+            accept="image/*"
+            onChange={handlePhotoChange}
+          />
+        </div><h1>Add Photo!</h1></div>
       <form onSubmit={handleSubmit}>
         <div>
-          <label>Name:</label>
+        <div className="titleCard"><label>Name:</label>
           <input
             type="text"
             name="name"
             value={item.name}
             onChange={handleInputChange}
           />
-        </div>
-        <div>
+        </div></div>
+        <div><div className="descriptionCard">
           <label>Description:</label>
           <textarea
             name="description"
             value={item.description}
-            onChange={handleInputChange}
+            onChange={handleInputChange} 
           />
-        </div>
-        <div>
-          <label>Photo (Local File):</label>
-          <input
-            type="file"
-            accept="image/*"
-            onChange={handlePhotoChange}
-          />
-        </div>
+        </div></div>
+        
         {item.photo && (
           <div>
             <img
@@ -113,24 +113,24 @@ function AddItem() {
             />
           </div>
         )}
-        <div>
+        <div><div className="ingredientsCard">
           <label>Ingredients:</label>
           <textarea
             name="ingredients"
             value={item.ingredients}
             onChange={handleInputChange}
           />
-        </div>
-        <div>
+        </div></div>
+        <div><div className="instructionsCard">
           <label>Instructions:</label>
           <textarea
             name="instructions"
             value={item.instructions}
             onChange={handleInputChange}
           />
-        </div>
+        </div></div>
         <div>
-
+          <div className="mealType">
           <label>Meal Type:</label>
           {/* <select
             name="mealType"
@@ -173,17 +173,16 @@ function AddItem() {
               onChange={handleMealTypeChange}
             />
             <label htmlFor="dinner">Dinner</label>
-          </div>
+          </div></div><div>
+          <button className='submit' type="submit">Add Recipe</button>
         </div>
-        <div>
-          <button type="submit">Add Recipe</button>
         </div>
+        
       </form >
       <div>
-        <button type="button" onClick={() => navigate(`/home`, { state: { recipes } })}>
-          Back to Home
+        <button className='buttonLogo' type="button" onClick={() => navigate(`/home`, { state: { recipes } })}>
         </button>
-      </div>
+      </div></div>
     </div >
   );
 }

@@ -1,587 +1,293 @@
-.root {
-    position: relative;
-    width: 1000px;
-    height: 1491px;
-    flex-direction: column;
-    align-items: flex-start;
-    background-color: #f1edeb;
-    overflow: hidden;
-  }
-  .rectangle19 {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 1000px;
-    height: 381px;
-    border-radius: 0 0 25px 25px;
-    background-image:/* webpackIgnore: true */ url('assets/rectangle19.jpeg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    box-shadow: 0px 4px 4px 0px #00000040;
-    filter: blur(0px);
-  }
-  .rectangle27 {
-    transform-origin: top left;
-    position: absolute;
-    left: 109.2165%;
-    right: -124.6336%;
-    top: 100.2085%;
-    bottom: -100.1676%;
-    outline: solid 1px #000;
-    background-color: #c0c0c033;
-    background-image:/* webpackIgnore: true */ url('assets/rectangle27.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    filter: blur(15px);
-    transform: matrix(-1, -0.0024, 0.0024, -1, 0, 0);
-  }
-  .rectangle25 {
-    position: absolute;
-    left: 478px;
-    top: 433px;
-    width: 132px;
-    height: 62px;
-    border-radius: 25px;
-    background-color: #eee3dc;
-    box-shadow: 0px 4px 4px 0px #00000040;
-  }
-  .rectangle252 {
-    position: absolute;
-    left: 61px;
-    top: 427px;
-    width: 400px;
-    height: 73px;
-    border-radius: 25px;
-    background-color: #eee3dc;
-    box-shadow: 0px 4px 4px 0px #00000040;
-  }
-  .chickenAlfredo {
-    color: #947969;
-    font-size: 32px;
-    font-weight: bold;
-    font-style: italic;
-    font-family: Gentium Book Basic, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-      'Liberation Sans', sans-serif;
-    position: absolute;
-    left: 3px;
-    top: 427px;
-    width: 391px;
-    height: 73px;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
-  ._2035m {
-    color: #947969;
-    font-size: 32px;
-    font-weight: bold;
-    font-style: italic;
-    font-family: Gentium Book Basic, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-      'Liberation Sans', sans-serif;
-    position: absolute;
-    left: 475px;
-    top: 430px;
-    width: 135px;
-    height: 68px;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
-  .rectangle253 {
-    position: absolute;
-    left: 62px;
-    top: 517px;
-    width: 877px;
-    height: 178px;
-    border-radius: 25px;
-    background-color: #eee3dc;
-    box-shadow: 0px 4px 4px 0px #00000040;
-  }
-  .spaghettiCarbonaraIsAClassicRo {
-    color: #947969;
-    font-size: 32px;
-    font-style: italic;
-    font-family: Gentium Book Basic, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-      'Liberation Sans', sans-serif;
-    position: absolute;
-    left: 80px;
-    top: 560px;
-    width: 877px;
-    height: 129px;
-    justify-content: center;
-    flex-direction: column;
-  }
-  .dESCRIPTION {
-    color: #947969;
-    font-size: 32px;
-    font-weight: bold;
-    font-style: italic;
-    font-family: Gentium Book Basic, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-      'Liberation Sans', sans-serif;
-    position: absolute;
-    left: 27px;
-    top: 517px;
-    width: 345px;
-    height: 68px;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
-  .rectangle254 {
-    position: absolute;
-    left: 61px;
-    top: 712px;
-    width: 876px;
-    height: 271px;
-    border-radius: 25px;
-    background-color: #eee3dc;
-    box-shadow: 0px 4px 4px 0px #00000040;
-  }
-  .iNGREDIENTS {
-    color: #947969;
-    font-size: 32px;
-    font-weight: bold;
-    font-style: italic;
-    font-family: Gentium Book Basic, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-      'Liberation Sans', sans-serif;
-    position: absolute;
-    left: 93px;
-    top: 705px;
-    width: 805.92px;
-    height: 62.8524px;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
-  ._2BonelessSkinlessChickenBreast {
-    position: absolute;
-    left: 96.0399px;
-    top: 764.241px;
-    width: 803.4172px;
-    height: 178.7621px;
-    justify-content: center;
-    flex-direction: column;
-  }
-  .textBlock {
-    color: #947969;
-    font-size: 24px;
-    font-style: italic;
-    font-family: Gentium Book Basic, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-      'Liberation Sans', sans-serif;
-  }
-  .textBlock2 {
-    margin-top: 0;
-    color: #947969;
-    font-size: 24px;
-    font-style: italic;
-    font-family: Gentium Book Basic, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-      'Liberation Sans', sans-serif;
-  }
-  .textBlock3 {
-    margin-top: 0;
-    color: #947969;
-    font-size: 24px;
-    font-style: italic;
-    font-family: Gentium Book Basic, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-      'Liberation Sans', sans-serif;
-  }
-  .textBlock4 {
-    margin-top: 0;
-    color: #947969;
-    font-size: 24px;
-    font-style: italic;
-    font-family: Gentium Book Basic, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-      'Liberation Sans', sans-serif;
-  }
-  .textBlock5 {
-    margin-top: 0;
-    color: #947969;
-    font-size: 24px;
-    font-style: italic;
-    font-family: Gentium Book Basic, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-      'Liberation Sans', sans-serif;
-  }
-  .textBlock6 {
-    margin-top: 0;
-    color: #947969;
-    font-size: 24px;
-    font-style: italic;
-    font-family: Gentium Book Basic, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-      'Liberation Sans', sans-serif;
-  }
-  .textBlock7 {
-    margin-top: 0;
-    color: #947969;
-    font-size: 24px;
-    font-style: italic;
-    font-family: Gentium Book Basic, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-      'Liberation Sans', sans-serif;
-  }
-  .rectangle272 {
-    position: absolute;
-    left: 410px;
-    top: 1318px;
-    width: 180px;
-    height: 162px;
-    background-image:/* webpackIgnore: true */ url('assets/rectangle272.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-  .rectangle255 {
-    position: absolute;
-    left: 62px;
-    top: 1000px;
-    width: 876px;
-    height: 308px;
-    border-radius: 25px;
-    background-color: #eee3dc;
-    box-shadow: 0px 4px 4px 0px #00000040;
-  }
-  .iNSTRUCTIONS {
-    color: #947969;
-    font-size: 32px;
-    font-weight: bold;
-    font-style: italic;
-    font-family: Gentium Book Basic, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-      'Liberation Sans', sans-serif;
-    position: absolute;
-    left: 94.5371px;
-    top: 1000px;
-    width: 805.92px;
-    height: 48.899px;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
-  ._1SeasonChickenBreastsWithSaltA {
-    position: absolute;
-    left: 94.5371px;
-    top: 1043.8186px;
-    width: 805.92px;
-    height: 257.1959px;
-    justify-content: center;
-    flex-direction: column;
-  }
-  .textBlock8 {
-    color: #947969;
-    font-size: 24px;
-    font-style: italic;
-    font-family: Gentium Book Basic, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-      'Liberation Sans', sans-serif;
-  }
-  .textBlock9 {
-    margin-top: 0;
-    color: #947969;
-    font-size: 24px;
-    font-style: italic;
-    font-family: Gentium Book Basic, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-      'Liberation Sans', sans-serif;
-  }
-  .textBlock10 {
-    margin-top: 0;
-    color: #947969;
-    font-size: 24px;
-    font-style: italic;
-    font-family: Gentium Book Basic, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-      'Liberation Sans', sans-serif;
-  }
-  .textBlock11 {
-    margin-top: 0;
-    color: #947969;
-    font-size: 24px;
-    font-style: italic;
-    font-family: Gentium Book Basic, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-      'Liberation Sans', sans-serif;
-  }
-  .textBlock12 {
-    margin-top: 0;
-    color: #947969;
-    font-size: 24px;
-    font-style: italic;
-    font-family: Gentium Book Basic, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-      'Liberation Sans', sans-serif;
-  }
-  .rectangle28 {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 1000px;
-    height: 381px;
-    border-radius: 0 0 25px 25px;
-    background-image:/* webpackIgnore: true */ url('assets/rectangle28.jpeg');
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    box-shadow: 0px 4px 4px 0px #00000040;
-    filter: blur(0px);
-  }
-  .rectangle29 {
-    position: absolute;
-    left: 478px;
-    top: 433px;
-    width: 132px;
-    height: 62px;
-    border-radius: 25px;
-    background-color: #eee3dc;
-    box-shadow: 0px 4px 4px 0px #00000040;
-  }
-  .rectangle30 {
-    position: absolute;
-    left: 61px;
-    top: 427px;
-    width: 400px;
-    height: 73px;
-    border-radius: 25px;
-    background-color: #eee3dc;
-    box-shadow: 0px 4px 4px 0px #00000040;
-  }
-  .chickenAlfredo2 {
-    color: #947969;
-    font-size: 32px;
-    font-weight: bold;
-    font-style: italic;
-    font-family: Gentium Book Basic, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-      'Liberation Sans', sans-serif;
-    position: absolute;
-    left: 3px;
-    top: 427px;
-    width: 391px;
-    height: 73px;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
-  ._2035m2 {
-    color: #947969;
-    font-size: 32px;
-    font-weight: bold;
-    font-style: italic;
-    font-family: Gentium Book Basic, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-      'Liberation Sans', sans-serif;
-    position: absolute;
-    left: 475px;
-    top: 430px;
-    width: 135px;
-    height: 68px;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
-  .rectangle256 {
-    position: absolute;
-    left: 62px;
-    top: 517px;
-    width: 877px;
-    height: 178px;
-    border-radius: 25px;
-    background-color: #eee3dc;
-    box-shadow: 0px 4px 4px 0px #00000040;
-  }
-  .spaghettiCarbonaraIsAClassicRo2 {
-    color: #947969;
-    font-size: 32px;
-    font-style: italic;
-    font-family: Gentium Book Basic, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-      'Liberation Sans', sans-serif;
-    position: absolute;
-    left: 80px;
-    top: 560px;
-    width: 877px;
-    height: 129px;
-    justify-content: center;
-    flex-direction: column;
-  }
-  .dESCRIPTION2 {
-    color: #947969;
-    font-size: 32px;
-    font-weight: bold;
-    font-style: italic;
-    font-family: Gentium Book Basic, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-      'Liberation Sans', sans-serif;
-    position: absolute;
-    left: 27px;
-    top: 517px;
-    width: 345px;
-    height: 68px;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
-  .rectangle31 {
-    position: absolute;
-    left: 61px;
-    top: 712px;
-    width: 876px;
-    height: 271px;
-    border-radius: 25px;
-    background-color: #eee3dc;
-    box-shadow: 0px 4px 4px 0px #00000040;
-  }
-  .iNGREDIENTS2 {
-    color: #947969;
-    font-size: 32px;
-    font-weight: bold;
-    font-style: italic;
-    font-family: Gentium Book Basic, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-      'Liberation Sans', sans-serif;
-    position: absolute;
-    left: 93px;
-    top: 705px;
-    width: 805.92px;
-    height: 62.8524px;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
-  ._2BonelessSkinlessChickenBreast2 {
-    position: absolute;
-    left: 96.0399px;
-    top: 764.241px;
-    width: 803.4172px;
-    height: 178.7621px;
-    justify-content: center;
-    flex-direction: column;
-  }
-  .textBlock13 {
-    color: #947969;
-    font-size: 24px;
-    font-style: italic;
-    font-family: Gentium Book Basic, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-      'Liberation Sans', sans-serif;
-  }
-  .textBlock14 {
-    margin-top: 0;
-    color: #947969;
-    font-size: 24px;
-    font-style: italic;
-    font-family: Gentium Book Basic, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-      'Liberation Sans', sans-serif;
-  }
-  .textBlock15 {
-    margin-top: 0;
-    color: #947969;
-    font-size: 24px;
-    font-style: italic;
-    font-family: Gentium Book Basic, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-      'Liberation Sans', sans-serif;
-  }
-  .textBlock16 {
-    margin-top: 0;
-    color: #947969;
-    font-size: 24px;
-    font-style: italic;
-    font-family: Gentium Book Basic, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-      'Liberation Sans', sans-serif;
-  }
-  .textBlock17 {
-    margin-top: 0;
-    color: #947969;
-    font-size: 24px;
-    font-style: italic;
-    font-family: Gentium Book Basic, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-      'Liberation Sans', sans-serif;
-  }
-  .textBlock18 {
-    margin-top: 0;
-    color: #947969;
-    font-size: 24px;
-    font-style: italic;
-    font-family: Gentium Book Basic, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-      'Liberation Sans', sans-serif;
-  }
-  .textBlock19 {
-    margin-top: 0;
-    color: #947969;
-    font-size: 24px;
-    font-style: italic;
-    font-family: Gentium Book Basic, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-      'Liberation Sans', sans-serif;
-  }
-  .rectangle257 {
-    position: absolute;
-    left: 62px;
-    top: 1000px;
-    width: 876px;
-    height: 308px;
-    border-radius: 25px;
-    background-color: #eee3dc;
-    box-shadow: 0px 4px 4px 0px #00000040;
-  }
-  .iNSTRUCTIONS2 {
-    color: #947969;
-    font-size: 32px;
-    font-weight: bold;
-    font-style: italic;
-    font-family: Gentium Book Basic, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-      'Liberation Sans', sans-serif;
-    position: absolute;
-    left: 94.5371px;
-    top: 1000px;
-    width: 805.92px;
-    height: 48.899px;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-  }
-  ._1SeasonChickenBreastsWithSaltA2 {
-    position: absolute;
-    left: 94.5371px;
-    top: 1043.8186px;
-    width: 805.92px;
-    height: 257.1959px;
-    justify-content: center;
-    flex-direction: column;
-  }
-  .textBlock20 {
-    color: #947969;
-    font-size: 24px;
-    font-style: italic;
-    font-family: Gentium Book Basic, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-      'Liberation Sans', sans-serif;
-  }
-  .textBlock21 {
-    margin-top: 0;
-    color: #947969;
-    font-size: 24px;
-    font-style: italic;
-    font-family: Gentium Book Basic, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-      'Liberation Sans', sans-serif;
-  }
-  .textBlock22 {
-    margin-top: 0;
-    color: #947969;
-    font-size: 24px;
-    font-style: italic;
-    font-family: Gentium Book Basic, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-      'Liberation Sans', sans-serif;
-  }
-  .textBlock23 {
-    margin-top: 0;
-    color: #947969;
-    font-size: 24px;
-    font-style: italic;
-    font-family: Gentium Book Basic, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-      'Liberation Sans', sans-serif;
-  }
-  .textBlock24 {
-    margin-top: 0;
-    color: #947969;
-    font-size: 24px;
-    font-style: italic;
-    font-family: Gentium Book Basic, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
-      'Liberation Sans', sans-serif;
-  }
-  
+/* mainbox first*/
+.mainbox2 {
+  width: 1000px;
+  height: fit-content;
+  background-image: url('/public/media/food1.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: left;
+  margin: 0 auto;
+  margin-bottom: 0 auto; 
+}
+
+/*header*/
+.header {
+
+  width: 1000px;
+  height: 381px;
+  border-radius: 0 0 25px 25px;
+  box-shadow: 0px 4px 4px 0px #00000040;
+  filter: blur(0px);
+}
+/*Title*/
+.chickenAlfredo {
+  color: #947969;
+  font-size: 32px;
+  font-weight: bold;
+  font-style: italic;
+  font-family: Gentium Book Basic, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 3px;
+  top: 427px;
+  width: 391px;
+  height: 73px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.titleCard {
+  margin-top: 25px;
+  padding-left: 20px;
+  padding-top: 20px;
+  left: 61px;
+  top: 427px;
+  width: 400px;
+  height: 73px;
+  border-radius: 25px;
+  background-color: #eee3dc;
+  box-shadow: 0px 4px 4px 0px #00000040;
+}
+
+/*Description card*/
+
+.descriptionCard {
+  margin: 0 auto;
+  margin-top: 25px;
+  padding-left: 20px;
+  padding-top: 20px;
+  left: 62px;
+  top: 517px;
+  width: 877px;
+  height: 178px;
+  border-radius: 25px;
+  background-color: #eee3dc;
+  box-shadow: 0px 4px 4px 0px #00000040;
+}
+.spaghettiCarbonaraDes {
+  color: #947969;
+  font-size: 32px;
+  font-style: italic;
+  font-family: Gentium Book Basic, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 80px;
+  top: 560px;
+  width: 877px;
+  height: 129px;
+  justify-content: center;
+  flex-direction: column;
+}
+.description {
+  color: #947969;
+  font-size: 32px;
+  font-weight: bold;
+  font-style: italic;
+  font-family: Gentium Book Basic, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 27px;
+  top: 517px;
+  width: 345px;
+  height: 68px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/*ingredients card*/
+.ingredientsCard {
+  margin: 0 auto;
+  margin-top: 25px;
+  padding-left: 20px;
+  padding-top: 20px;
+  left: 61px;
+  top: 712px;
+  width: 876px;
+  height: 271px;
+  border-radius: 25px;
+  background-color: #eee3dc;
+  box-shadow: 0px 4px 4px 0px #00000040;
+}
+.ingredients {
+
+  color: #947969;
+  font-size: 32px;
+  font-weight: bold;
+  font-style: italic;
+  font-family: Gentium Book Basic, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 93px;
+  top: 705px;
+  width: 805.92px;
+  height: 62.8524px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+._2BonelessSkinlessChickenBreast {
+  position: absolute;
+  left: 96.0399px;
+  top: 764.241px;
+  width: 803.4172px;
+  height: 178.7621px;
+  justify-content: center;
+  flex-direction: column;
+}
+.textLine1 {
+  color: #947969;
+  font-size: 24px;
+  font-style: italic;
+  font-family: Gentium Book Basic, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+}
+.textLine2 {
+  margin-top: 0;
+  color: #947969;
+  font-size: 24px;
+  font-style: italic;
+  font-family: Gentium Book Basic, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+}
+.textLine3 {
+  margin-top: 0;
+  color: #947969;
+  font-size: 24px;
+  font-style: italic;
+  font-family: Gentium Book Basic, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+}
+.textLine4 {
+  margin-top: 0;
+  color: #947969;
+  font-size: 24px;
+  font-style: italic;
+  font-family: Gentium Book Basic, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+}
+.textLine5 {
+  margin-top: 0;
+  color: #947969;
+  font-size: 24px;
+  font-style: italic;
+  font-family: Gentium Book Basic, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+}
+.textLine6 {
+  margin-top: 0;
+  color: #947969;
+  font-size: 24px;
+  font-style: italic;
+  font-family: Gentium Book Basic, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+}
+.textLine7 {
+  margin-top: 0;
+  color: #947969;
+  font-size: 24px;
+  font-style: italic;
+  font-family: Gentium Book Basic, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+}
+
+/*DishHub logo recipe page*/
+
+.dishHubRecipe {
+  width: 180px;
+  height: 162px;
+  background-image:/* webpackIgnore: true */ url('assets/dishHub.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.instructionsCard {
+  margin: 0 auto;
+  margin-top: 25px;
+  padding-left: 20px;
+  padding-top: 20px;
+  left: 62px;
+  top: 1000px;
+  width: 876px;
+  height: 308px;
+  border-radius: 25px;
+  background-color: #eee3dc;
+  box-shadow: 0px 4px 4px 0px #00000040;
+}
+.instructions {
+  color: #947969;
+  font-size: 32px;
+  font-weight: bold;
+  font-style: italic;
+  font-family: Gentium Book Basic, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans',
+    'Liberation Sans', sans-serif;
+  position: absolute;
+  left: 94.5371px;
+  top: 1000px;
+  width: 805.92px;
+  height: 48.899px;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.buttonLogo {
+  background-color: #00000000;
+  border: none; 
+  background-image: url('/public/media/logo.png'); 
+  background-size: cover;
+  background-position: center;
+  margin-left: 425px;
+  margin-top: 25px;
+  width: 162px;
+  height: 180px;
+}
+
+.addPhotoBox {
+  width: 1000px;
+  height: 381px;
+  border-radius: 0 0 25px 25px;
+  box-shadow: 0px 4px 4px 0px #00000040;
+  background-color: #eee3dc;
+  padding-top: 100px;
+  padding-left: 325px;
+  text-align: middle;
+}
+.localFile {
+  margin-left: 125px;;
+  margin-top: 25px;
+  padding: 15px;
+  width: 125px;
+  height: 115px;
+  border-radius: 25px;
+  background-color: #f6f1ed;
+  box-shadow: 0px 4px 4px 0px #00000040;
+}
+.mealType {
+
+  margin-left: 440px;;
+  margin-top: 25px;
+  padding: 15px;
+  width: 125px;
+  height: 115px;
+  border-radius: 25px;
+  background-color: #f6f1ed;
+  box-shadow: 0px 4px 4px 0px #00000040;
+}
+
+.submit {
+  margin-left: 355px;
+  margin-top: 25px;
+  left: 425px;
+  top: 1337px;
+  width: 287px;
+  height: 64px;
+  border-radius: 25px;
+  border-color: #00000000;
+  background-color: #eee3dc;
+  box-shadow: 0px 4px 4px 0px #00000040;
+}
