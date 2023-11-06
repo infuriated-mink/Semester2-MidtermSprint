@@ -1,17 +1,17 @@
 .mainbox {
-padding: 0;
-width: 1019px;
-height: 679px;
-left: 228px;
-top: 58px;
-background: rgba(139, 69, 19, 0.15);
-box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
-border-radius: 35px;
-}
-
-.header {
+    padding: 0;
+    width: 1019px;
+    height: 679px;
+    left: 228px;
+    top: 58px;
+    background: rgba(139, 69, 19, 0.15);
+    box-shadow: inset 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 35px;
+  }
+  
+  .header {
     padding: 0px;
-    height: flex;
+    height: auto; /* Changed 'flex' to 'auto' */
     width: 1014px;
     font-family: sans-serif;
     background: rgba(139, 69, 19, 0.15);
@@ -21,17 +21,17 @@ border-radius: 35px;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border-top-left-radius:  35px;
+    border-top-left-radius: 35px;
     border-top-right-radius: 35px;
   }
-
+  
   .horizontal-bar {
     background-color: #01696E;
     height: 4px;
     width: 804px;
     margin: 0 auto;
     margin-bottom: 10px;
-  }     
+  }
   
   .logo {
     position: absolute;
@@ -52,6 +52,7 @@ border-radius: 35px;
     color: rgba(115, 115, 115, 0.74);
     text-align: center;
   }
+  
   .horizontal-bar2 {
     width: 1014px;
     height: 7px;
@@ -60,7 +61,7 @@ border-radius: 35px;
     margin: 0 auto;
     margin-bottom: 10px;
   }
-
+  
   .Auth-form-container {
     justify-content: center;
     align-items: center;
@@ -68,9 +69,8 @@ border-radius: 35px;
     height: 100vh;
     margin: 0 auto;
     width: 420px;
-    height: flex;
+    height: auto; /* Changed 'flex' to 'auto' */
     margin-top: 100px;
-
   }
   
   .Auth-form {
@@ -96,7 +96,7 @@ border-radius: 35px;
     color: rgb(34, 34, 34);
     font-weight: 800;
   }
-
+  
   .Auth-form-container .Auth-form .btn-primary {
     background-color: #01696E;
     color: #fff;
